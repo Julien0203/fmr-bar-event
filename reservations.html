@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="icon" type="image/png" href="logo.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demander un Devis — Bar Mobile Événementiel Provence | FMR Bar Event</title>
+  <meta name="description" content="Demandez votre devis gratuit pour FMR Bar Event. Bar mobile cocktail mariage, anniversaire, entreprise en Provence, Luberon et Hérault. Réponse sous 48h.">
+  <link rel="canonical" href="https://www.fmr-bar-event.fr/reservations">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .resa-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:5rem; align-items:start; }
+    .resa-form-wrap {
+      background: var(--c-noir-3);
+      border: 1px solid var(--c-or-border);
+      border-radius: var(--r-lg);
+      padding: 3.5rem;
+    }
+    .form-group { margin-bottom:1.5rem; }
+    .form-label {
+      display:block;
+      font-size:0.68rem;
+      font-weight:700;
+      letter-spacing:0.2em;
+      text-transform:uppercase;
+      color:var(--c-or);
+      margin-bottom:0.6rem;
+    }
+    .form-input, .form-select, .form-textarea {
+      width:100%;
+      padding:0.9rem 1.15rem;
+      background: var(--c-noir-4);
+      border: 1px solid var(--c-or-border);
+      border-radius: var(--r);
+      color: var(--c-creme);
+      font-size:0.95rem;
+      outline:none;
+      transition: border-color var(--tr-fast);
+      font-family:var(--f-sans);
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color:rgba(200,168,75,.55);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color:var(--c-texte-soft); }
+    .form-select option { background:var(--c-noir-3); }
+    .form-textarea { resize:vertical; min-height:130px; }
+    .form-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .form-submit {
+      width:100%;
+      padding:1.1rem;
+      background:var(--c-or);
+      color:var(--c-noir);
+      font-size:0.8rem;
+      font-weight:700;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      border-radius:var(--r);
+      border:none;
+      cursor:pointer;
+      transition: all var(--tr-fast);
+    }
+    .form-submit:hover { background:var(--c-or-clair); transform:translateY(-2px); box-shadow:0 8px 30px rgba(200,168,75,.3); }
+    .form-submit:disabled { opacity:.7; cursor:not-allowed; transform:none; }
+    .form-note {
+      font-size:0.75rem;
+      color:var(--c-texte-soft);
+      text-align:center;
+      margin-top:1rem;
+    }
+    .form-success {
+      display:none;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:3rem 2rem;
+      gap:1.5rem;
+    }
+    .form-success__icon { font-size:3rem; }
+    .form-success__title { font-family:var(--f-serif); font-size:2rem; color:var(--c-creme); }
+    .form-success__sub { color:var(--c-texte); }
+    .resa-info { display:flex; flex-direction:column; gap:1.5rem; }
+    .info-card {
+      background: var(--c-noir-3);
+      border: 1px solid var(--c-or-border);
+      border-radius: var(--r-lg);
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+    }
+    .info-card__ico { font-size:1.2rem; flex-shrink:0; padding-top:0.15rem; }
+    .info-card__body { flex:1; min-width:0; }
+    .info-card__title { font-family:var(--f-serif); font-size:1rem; color:var(--c-creme); margin-bottom:0.2rem; white-space:nowrap; }
+    .info-card__text { font-size:0.8rem; color:var(--c-texte); line-height:1.6; }
+    .info-card__list { display:flex; flex-direction:column; gap:0.35rem; margin-top:0.6rem; }
+    .info-card__list li { display:flex; gap:0.6rem; font-size:0.8rem; color:var(--c-texte); }
+    .info-card__list li span:first-child { color:var(--c-or); }
+    @media(max-width:900px) {
+      .resa-grid { grid-template-columns:1fr; gap:3rem; }
+      .form-grid-2 { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="https://www.fmr-bar-event.fr/images/fmr-logo.png" onerror="this.style.display='none'" alt="FMR" class="nav__logo-img" width="42" height="42">
+      <div class="nav__logo-text">FMR Bar Event<span class="nav__logo-sub">Bar Mobile · Provence</span></div>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link">Accueil</a></li>
+      <li class="nav__item">
+        <a href="nos-prestations.html" class="nav__link nav__link--has-dropdown">Prestations</a>
+        <div class="nav__dropdown">
+          <a href="mariage.html">Mariage</a><a href="anniversaire.html">Anniversaire</a>
+          <a href="entreprise.html">Événement Entreprise</a>
+          <a href="nos-prestations.html#soiree">Soirée Privée</a>
+          <a href="nos-prestations.html#brunch">Brunch</a>
+          <a href="nos-prestations.html#garden">Garden Party</a>
+        </div>
+      </li>
+      <li><a href="nos-cartes.html" class="nav__link">Nos Cartes</a></li>
+      <li><a href="a-propos.html" class="nav__link">Notre Histoire</a></li>
+      <li><a href="faq.html" class="nav__link">FAQ</a></li>
+    </ul>
+    <a href="reservations.html" class="nav__cta" style="background:var(--c-noir-3); color:var(--c-or); border:1px solid var(--c-or);">En cours…</a>
+    <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile">
+  <a href="index.html" class="nav__mobile-link">Accueil</a>
+  <div class="nav__mobile-sep"></div>
+  <a href="nos-prestations.html" class="nav__mobile-link">Prestations</a>
+  <a href="mariage.html" class="nav__mobile-link">Mariage</a>
+  <a href="anniversaire.html" class="nav__mobile-link">Anniversaire</a>
+  <a href="entreprise.html" class="nav__mobile-link">Entreprise</a>
+  <div class="nav__mobile-sep"></div>
+  <a href="nos-cartes.html" class="nav__mobile-link">Nos Cartes</a>
+  <a href="a-propos.html" class="nav__mobile-link">Notre Histoire</a>
+  <a href="faq.html" class="nav__mobile-link">FAQ</a>
+  <a href="reservations.html" class="nav__mobile-cta">Demander un devis</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="min-height:65vh;">
+  <div class="hero__bg">
+    <img src="images/bartender-sea.jpg"
+         alt="FMR Bar Event — bar mobile cocktail Provence" class="hero__photo" loading="eager">
+    <div class="hero__gradient"></div>
+  </div>
+  <div class="hero__content">
+    <p class="hero__eyebrow">Devis gratuit · Réponse sous 48h</p>
+    <h1 class="hero__h1">
+      Parlons de<br><em>votre événement</em>
+    </h1>
+    <p class="hero__sub">
+      Décrivez-nous votre projet et nous vous envoyons une proposition personnalisée. Aucun engagement, gratuit et rapide.
+    </p>
+    <div class="hero__actions">
+      <a href="#simulateur" class="btn btn--primary">✦ Remplir le formulaire</a>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULATEUR -->
+<section class="section section--medium" id="simulateur">
+  <div class="container">
+    <header style="text-align:center; margin-bottom:3rem;" class="reveal">
+      <p class="s-label">Outil interactif</p>
+      <h2 class="s-title">Estimez votre <em>budget</em></h2>
+      <p class="s-desc" style="text-align:center; margin:1rem auto 0;">Avant de remplir le formulaire, simulez votre budget en quelques clics.</p>
+    </header>
+    <div class="sim2 js-simulator reveal">
+      <div class="sim2__form">
+        <div class="sim2__row">
+          <span class="sim2__lbl">Événement</span>
+          <div class="sim2__tags">
+            <button class="sim2__tag" data-sim-type="mariage">Mariage</button>
+            <button class="sim2__tag" data-sim-type="anniversaire">Anniversaire</button>
+            <button class="sim2__tag" data-sim-type="entreprise">Entreprise</button>
+            <button class="sim2__tag" data-sim-type="soirée privée">Soirée privée</button>
+            <button class="sim2__tag" data-sim-type="garden party">Garden party</button>
+            <button class="sim2__tag" data-sim-type="brunch">Brunch</button>
+          </div>
+        </div>
+        <div class="sim2__divider"></div>
+        <div class="sim2__row">
+          <span class="sim2__lbl">Invités · <b class="js-sim-guests-val" style="color:var(--c-or)">80</b></span>
+          <input type="range" class="sim2__range js-sim-guests" min="20" max="500" value="80" step="5">
+          <div class="sim2__range-bounds"><span>20</span><span>500+</span></div>
+        </div>
+        <div class="sim2__divider"></div>
+        <div class="sim2__row">
+          <span class="sim2__lbl">Durée</span>
+          <div class="sim2__tags">
+            <button class="sim2__tag" data-sim-dur="2h">2h</button>
+            <button class="sim2__tag active" data-sim-dur="3h">3h</button>
+            <button class="sim2__tag" data-sim-dur="4h+">4h+</button>
+            <button class="sim2__tag" data-sim-dur="journée">Journée</button>
+          </div>
+        </div>
+        <div class="sim2__divider"></div>
+        <div class="sim2__row">
+          <span class="sim2__lbl">Options <em class="sim2__opt-note">facultatif</em></span>
+          <div class="sim2__tags">
+            <button class="sim2__tag" data-sim-opt="bar-a-vins">Bar à vins +180€</button>
+            <button class="sim2__tag" data-sim-opt="signatures">Signatures +120€</button>
+            <button class="sim2__tag" data-sim-opt="perso">Personnalisation +90€</button>
+          </div>
+        </div>
+      </div>
+      <div class="sim2__result">
+        <p class="sim2__from">Estimation</p>
+        <p class="sim2__price js-sim-price">550 €</p>
+        <p class="sim2__note">Devis gratuit · Déplacement inclus</p>
+        <a href="#formulaire" class="btn btn--primary sim2__cta">Remplir le formulaire ↓</a>
+        <a href="tel:+33676972108" class="sim2__tel">06 76 97 21 08</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE + INFOS -->
+<section class="section section--dark" id="formulaire">
+  <div class="container">
+    <header style="margin-bottom:2.5rem;" class="reveal">
+      <p class="s-label">Formulaire de devis</p>
+      <h2 class="s-title" style="font-size:2.8rem;">
+        Votre demande<br><em>en détail</em>
+      </h2>
+    </header>
+    <div class="resa-grid">
+
+      <!-- Formulaire -->
+      <div style="position:sticky; top:calc(var(--nav-h) + 2rem); align-self:start;">
+        <div class="resa-form-wrap reveal">
+          <form class="js-resa-form" action="mailto:fmr.event84@gmail.com" method="get" novalidate>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="prenom">Prénom *</label>
+                <input class="form-input" type="text" id="prenom" name="prenom" required placeholder="Votre prénom" autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="nom">Nom *</label>
+                <input class="form-input" type="text" id="nom" name="nom" required placeholder="Votre nom" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email *</label>
+              <input class="form-input" type="email" id="email" name="email" required placeholder="votre@email.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="tel">Téléphone</label>
+              <input class="form-input" type="tel" id="tel" name="tel" placeholder="06 XX XX XX XX" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="type-event">Type d'événement *</label>
+              <select class="form-select" id="type-event" name="type-event" required>
+                <option value="">Sélectionnez votre événement</option>
+                <option>Mariage</option>
+                <option>Anniversaire</option>
+                <option>Soirée Privée</option>
+                <option>Brunch</option>
+                <option>Garden Party / Outdoor</option>
+                <option>Événement Entreprise</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="date-event">Date de l'événement *</label>
+                <input class="form-input" type="date" id="date-event" name="date-event" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="nb-invites">Nombre d'invités *</label>
+                <input class="form-input" type="number" id="nb-invites" name="nb-invites" required min="10" max="1000" placeholder="ex : 120">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lieu">Lieu / Ville *</label>
+              <input class="form-input" type="text" id="lieu" name="lieu" required placeholder="ex : Domaine de la Gayolle, Brignoles" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="duree">Durée souhaitée</label>
+              <select class="form-select" id="duree" name="duree">
+                <option value="">Durée de prestation</option>
+                <option>2 heures</option>
+                <option>3 heures</option>
+                <option>4 heures</option>
+                <option>Journée complète</option>
+                <option>Je ne sais pas encore</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Votre projet en quelques mots</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Décrivez votre événement, vos envies, vos contraintes… Plus vous nous donnez de détails, plus notre devis sera précis."></textarea>
+            </div>
+            <button type="submit" class="form-submit">
+              ✦ Envoyer ma demande de devis
+            </button>
+            <p class="form-note">Vos données sont confidentielles. Réponse garantie sous 48h.</p>
+          </form>
+          <div class="form-success">
+            <div class="form-success__icon">✅</div>
+            <h3 class="form-success__title">Demande envoyée !</h3>
+            <p class="form-success__sub">Loïc ou Pierre vous contactera dans les 48h pour construire votre devis personnalisé.</p>
+            <a href="index.html" class="btn btn--primary" style="margin-top:1rem;">Retour à l'accueil</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Infos latérales -->
+      <div class="resa-info" style="position:sticky; top:calc(var(--nav-h) + 2rem); align-self:start;">
+        <div class="info-card">
+          <div class="info-card__ico">✦</div>
+          <div class="info-card__body">
+            <h3 class="info-card__title">Réponse rapide</h3>
+            <p class="info-card__text">Nous vous répondons <strong style="color:var(--c-creme);">sous 48h</strong> avec une proposition détaillée et personnalisée pour votre événement.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__ico">✦</div>
+          <div class="info-card__body">
+            <h3 class="info-card__title">Devis gratuit</h3>
+            <p class="info-card__text">Votre devis est 100% gratuit et sans engagement. On vous présente tout en détail avant toute décision.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__ico">·</div>
+          <div class="info-card__body">
+            <h3 class="info-card__title">Préférez l'appel ?</h3>
+            <p class="info-card__text">On aime aussi parler ! Appelez-nous directement pour un échange rapide.</p>
+            <a href="tel:+33676972108" style="display:inline-block; margin-top:0.75rem; font-family:var(--f-serif); font-size:1.2rem; color:var(--c-or); transition:color .2s;" onmouseover="this.style.color='var(--c-or-clair)'" onmouseout="this.style.color='var(--c-or)'">06 76 97 21 08</a>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__ico">·</div>
+          <div class="info-card__body">
+            <h3 class="info-card__title">Zone d'intervention</h3>
+            <ul class="info-card__list">
+              <li><span>·</span><span>Provence — Avignon, Vaucluse</span></li>
+              <li><span>·</span><span>Luberon — Gordes, Bonnieux, Apt…</span></li>
+              <li><span>·</span><span>Hérault — Montpellier, Sète…</span></li>
+              <li><span>·</span><span>Autres zones : nous consulter</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <p class="s-label" style="margin-bottom:0.5rem;">Bar Mobile · Provence</p>
+        <p class="footer__brand-name">FMR Bar Event</p>
+        <p class="footer__brand-desc">Bar mobile artisanal en Provence, Luberon et Hérault. Cocktails sur-mesure pour vos événements inoubliables.</p>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/fmr.bar.event" class="footer__social" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/fmr.bar.event" class="footer__social" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Prestations</p>
+        <ul class="footer__links">
+          <li><a href="mariage.html" class="footer__link">Mariage</a></li>
+          <li><a href="anniversaire.html" class="footer__link">Anniversaire</a></li>
+          <li><a href="entreprise.html" class="footer__link">Entreprise</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html" class="footer__link">Accueil</a></li>
+          <li><a href="nos-cartes.html" class="footer__link">Nos Cartes</a></li>
+          <li><a href="a-propos.html" class="footer__link">Notre Histoire</a></li>
+          <li><a href="faq.html" class="footer__link">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Contact</p>
+        <div class="footer__contacts">
+          <div class="footer__contact-row"><span class="footer__contact-ico">·</span><a href="tel:+33676972108">06 76 97 21 08</a></div>
+          <div class="footer__contact-row"><span class="footer__contact-ico">·</span><a href="mailto:fmr.event84@gmail.com">fmr.event84@gmail.com</a></div>
+          <div class="footer__contact-row"><span class="footer__contact-ico">·</span><span>Provence · Luberon · Hérault</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 FMR Bar Event. Réalisé par <a href="https://tricolab.fr" target="_blank" style="color:var(--c-or);">Tricolab</a>.</p>
+      <nav class="footer__legal"><a href="mentions-legales.html">Mentions légales</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
