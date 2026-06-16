@@ -1989,7 +1989,9 @@ input, select, textarea { font-family: inherit; }
 .bento-b { grid-column: 5 / 9; grid-row: 1; }
 .bento-c { grid-column: 9 / 13; grid-row: 1; }
 .bento-d { grid-column: 5 / 9; grid-row: 2; }
+.bento-d img { object-position: center top; }
 .bento-e { grid-column: 9 / 13; grid-row: 2; }
+.bento-e img { object-position: center top; }
 @media (max-width: 860px) {
   .bento-a { grid-column: 1 / -1; grid-row: auto; height: 260px; }
   .bento-b, .bento-c, .bento-d, .bento-e { grid-column: auto; grid-row: auto; height: 180px; }
