@@ -397,3 +397,24 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
   });
 })();
+
+/* ---- Cookie Banner ---- */
+(function () {
+  const KEY    = 'fmr-cookie-consent';
+  const banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+
+  if (!localStorage.getItem(KEY)) {
+    setTimeout(function () { banner.classList.add('visible'); }, 900);
+  }
+
+  document.getElementById('cookie-accept').addEventListener('click', function () {
+    localStorage.setItem(KEY, 'accepted');
+    banner.classList.remove('visible');
+  });
+
+  document.getElementById('cookie-refuse').addEventListener('click', function () {
+    localStorage.setItem(KEY, 'refused');
+    banner.classList.remove('visible');
+  });
+})();
