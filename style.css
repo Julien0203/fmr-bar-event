@@ -2915,3 +2915,143 @@ input, select, textarea { font-family: inherit; }
   .cookie-banner__label { display: none; }
   .cookie-banner__actions { width: 100%; justify-content: space-between; }
 }
+
+/* ---- Cocktail scroll — arrows ---- */
+.cocktails-feat__viewport { position: relative; }
+.cktl-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  z-index: 10; width: 2.8rem; height: 2.8rem;
+  border-radius: 50%;
+  background: rgba(14,13,11,.88);
+  border: 1px solid var(--c-or-border);
+  color: var(--c-or); font-size: 1.3rem; line-height: 1;
+  cursor: pointer; transition: all var(--tr);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+}
+.cktl-nav--prev { left: 1.2rem; }
+.cktl-nav--next { right: 1.2rem; }
+.cktl-nav:hover { border-color: var(--c-or); box-shadow: 0 0 16px rgba(200,168,75,.15); }
+.cktl-nav[disabled] { opacity: 0.2; cursor: default; pointer-events: none; }
+
+/* ---- Testi Carousel (avis avec flèches) ---- */
+.testi-carousel {
+  position: relative;
+  padding: 0 3.5rem;
+}
+.testi-carousel__track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+.testi-carousel__track::-webkit-scrollbar { display: none; }
+.testi-carousel__track .testi-card {
+  flex: 0 0 340px;
+  scroll-snap-align: start;
+}
+.testi-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  z-index: 10; width: 2.8rem; height: 2.8rem;
+  border-radius: 50%;
+  background: rgba(14,13,11,.9);
+  border: 1px solid var(--c-or-border);
+  color: var(--c-or); font-size: 1.3rem; line-height: 1;
+  cursor: pointer; transition: all var(--tr);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+}
+.testi-nav--prev { left: 0; }
+.testi-nav--next { right: 0; }
+.testi-nav:hover { border-color: var(--c-or); box-shadow: 0 0 16px rgba(200,168,75,.15); }
+.testi-nav[disabled] { opacity: 0.2; cursor: default; pointer-events: none; }
+@media (max-width: 860px) {
+  .testi-carousel { padding: 0 2.8rem; }
+  .testi-carousel__track .testi-card { flex: 0 0 calc(100% - 2rem); }
+  .cktl-nav--prev { left: 0.4rem; }
+  .cktl-nav--next { right: 0.4rem; }
+}
+
+/* ---- Mentions légales ---- */
+.legal-doc { color: var(--c-texte); }
+.legal-section {
+  margin-bottom: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(200,168,75,.12);
+}
+.legal-section:last-child { border-bottom: none; margin-bottom: 0; }
+.legal-h2 {
+  font-family: var(--f-serif);
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: var(--c-creme);
+  margin-bottom: 1.25rem;
+}
+.legal-h3 {
+  font-family: var(--f-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-or);
+  margin: 1.75rem 0 0.75rem;
+}
+.legal-doc p { line-height: 1.8; margin-bottom: 0.9rem; font-size: 0.95rem; }
+.legal-doc a { color: var(--c-or); text-decoration: underline; text-underline-offset: 3px; }
+.legal-doc a:hover { color: var(--c-creme); }
+.legal-block {
+  background: var(--c-noir-3);
+  border: 1px solid var(--c-or-border);
+  border-radius: var(--r-md);
+  padding: 1.5rem 2rem;
+  margin: 1rem 0 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+.legal-block p { margin-bottom: 0; }
+.legal-list {
+  padding-left: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+.legal-list li {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 0.35rem;
+  color: var(--c-texte);
+}
+.legal-list li strong { color: var(--c-creme); }
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin: 1rem 0 1.25rem;
+}
+.legal-table th {
+  background: var(--c-noir-3);
+  border: 1px solid var(--c-or-border);
+  padding: 0.65rem 1rem;
+  text-align: left;
+  font-family: var(--f-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-or);
+}
+.legal-table td {
+  border: 1px solid rgba(200,168,75,.1);
+  padding: 0.65rem 1rem;
+  color: var(--c-texte);
+  vertical-align: top;
+}
+.legal-table code {
+  font-family: monospace;
+  font-size: 0.85em;
+  color: var(--c-creme);
+  background: rgba(255,255,255,.05);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}

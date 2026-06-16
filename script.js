@@ -418,3 +418,39 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     banner.classList.remove('visible');
   });
 })();
+
+/* ---- Cocktail scroll arrows ---- */
+(function () {
+  var scroll = document.querySelector('.cocktails-feat__scroll');
+  var prev  = document.querySelector('.cktl-nav--prev');
+  var next  = document.querySelector('.cktl-nav--next');
+  if (!scroll || !prev || !next) return;
+  var STEP = 275;
+  function upd() {
+    prev.disabled = scroll.scrollLeft <= 1;
+    next.disabled = scroll.scrollLeft >= scroll.scrollWidth - scroll.clientWidth - 1;
+  }
+  prev.addEventListener('click', function () { scroll.scrollBy({ left: -STEP, behavior: 'smooth' }); });
+  next.addEventListener('click', function () { scroll.scrollBy({ left:  STEP, behavior: 'smooth' }); });
+  scroll.addEventListener('scroll', upd, { passive: true });
+  upd();
+})();
+
+/* ---- Testi Carousel arrows ---- */
+(function () {
+  document.querySelectorAll('.testi-carousel').forEach(function (car) {
+    var track = car.querySelector('.testi-carousel__track');
+    var prev  = car.querySelector('.testi-nav--prev');
+    var next  = car.querySelector('.testi-nav--next');
+    if (!track || !prev || !next) return;
+    function upd() {
+      prev.disabled = track.scrollLeft <= 1;
+      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+    }
+    var STEP = 360;
+    prev.addEventListener('click', function () { track.scrollBy({ left: -STEP, behavior: 'smooth' }); });
+    next.addEventListener('click', function () { track.scrollBy({ left:  STEP, behavior: 'smooth' }); });
+    track.addEventListener('scroll', upd, { passive: true });
+    upd();
+  });
+})();
