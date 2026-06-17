@@ -120,19 +120,16 @@
   const sim = document.querySelector('.js-simulator');
   if (!sim) return;
 
-  // Tarifs base
-  const BASE       = 350;
-  const GUEST_RATE = 3.5;  // € par invité au-delà de 30
-  const MIN_GUESTS = 30;
-
-  const DURATIONS  = { '2h': 1, '3h': 1.3, '4h+': 1.6, 'journée': 2.1 };
+  // Tarifs : 2,5 cocktails × 9 € = 22,5 € / invité
+  const GUEST_RATE = 22.5;
+  const DURATIONS  = { '2h': 0.75, '3h': 1.0, '4h+': 1.4, 'journée': 2.0 };
   const TYPES      = {
-    'mariage':     1.30,
-    'anniversaire':1.10,
-    'soirée privée':1.05,
-    'brunch':      1.05,
-    'garden party':1.00,
-    'entreprise':  1.20,
+    'mariage':      1.0,
+    'anniversaire': 1.0,
+    'soirée privée':1.0,
+    'brunch':       1.0,
+    'garden party': 1.0,
+    'entreprise':   1.0,
   };
   const OPTIONS    = { 'bar-a-vins': 180, 'signatures': 120, 'perso': 90 };
 
@@ -200,10 +197,7 @@
     const guests = state.guests;
     const typeM  = state.type     ? TYPES[state.type] || 1      : 1;
     const durM   = state.duration ? DURATIONS[state.duration] || 1 : 1;
-    let   price  = BASE;
-
-    if (guests > MIN_GUESTS) price += (guests - MIN_GUESTS) * GUEST_RATE;
-    price *= typeM * durM;
+    let   price  = guests * GUEST_RATE * typeM * durM;
     state.options.forEach(opt => { price += OPTIONS[opt] || 0; });
     price = Math.ceil(price / 50) * 50;
 
