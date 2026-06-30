@@ -46,56 +46,91 @@
   });
 })();
 
-/* ---- Reveal on scroll ---- */
+/* ---- GSAP Setup ---- */
 (function () {
-  const els = document.querySelectorAll('.reveal');
-  if (!els.length) return;
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  els.forEach(el => io.observe(el));
+  if (typeof gsap === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.defaults({ ease: 'power2.out' });
 })();
 
-/* ---- Compteurs animés ---- */
+/* ---- GSAP: Hero entrance (index — .hero) ---- */
 (function () {
+  if (typeof gsap === 'undefined') return;
+  if (!document.querySelector('.hero__content')) return;
+
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.15 });
+  tl.from('.hero__eyebrow', { y: 22, autoAlpha: 0, duration: 0.75 })
+    .from('.hero__h1',      { y: 36, autoAlpha: 0, duration: 1.0  }, '-=0.45')
+    .from('.hero__sub',     { y: 20, autoAlpha: 0, duration: 0.75 }, '-=0.5')
+    .from('.hero__actions', { y: 18, autoAlpha: 0, duration: 0.65 }, '-=0.45')
+    .from('.hero__scroll',  { autoAlpha: 0, duration: 0.6 }, '-=0.25')
+    .from('.hero__kpis-bar',{ y: 12, autoAlpha: 0, duration: 0.5  }, '-=0.3');
+})();
+
+/* ---- GSAP: Parallax hero photo ---- */
+(function () {
+  if (typeof gsap === 'undefined') return;
+  const heroPhoto = document.querySelector('.hero__photo');
+  if (!heroPhoto) return;
+
+  gsap.to(heroPhoto, {
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.5 },
+    y: '18%', ease: 'none',
+  });
+})();
+
+/* ---- GSAP: Scroll reveal (.reveal) ---- */
+(function () {
+  if (typeof gsap === 'undefined') return;
+
+  const mm = gsap.matchMedia();
+
+  mm.add('(prefers-reduced-motion: no-preference)', () => {
+    gsap.utils.toArray('.reveal').forEach(el => {
+      const delay =
+        el.classList.contains('reveal--delay-5') ? 0.5 :
+        el.classList.contains('reveal--delay-4') ? 0.4 :
+        el.classList.contains('reveal--delay-3') ? 0.3 :
+        el.classList.contains('reveal--delay-2') ? 0.2 :
+        el.classList.contains('reveal--delay-1') ? 0.1 : 0;
+
+      gsap.from(el, {
+        scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+        y: 40, autoAlpha: 0, duration: 0.8, delay,
+      });
+    });
+  });
+
+  mm.add('(prefers-reduced-motion: reduce)', () => {
+    document.querySelectorAll('.reveal').forEach(el => gsap.set(el, { autoAlpha: 1, y: 0 }));
+  });
+})();
+
+/* ---- GSAP: Compteurs animés ---- */
+(function () {
+  if (typeof gsap === 'undefined') return;
   const cells = document.querySelectorAll('[data-count]');
   if (!cells.length) return;
 
-  function animateCount(el, target, duration = 2000) {
+  cells.forEach(el => {
+    const target  = parseFloat(el.dataset.count);
     const isFloat = target % 1 !== 0;
-    const suffix = el.dataset.suffix || '';
-    const prefix = el.dataset.prefix || '';
-    const start  = performance.now();
+    const suffix  = el.dataset.suffix || '';
+    const prefix  = el.dataset.prefix || '';
+    const proxy   = { val: 0 };
 
-    function step(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased    = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      const value    = eased * target;
-      el.textContent = prefix + (isFloat ? value.toFixed(1) : Math.round(value)) + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el     = entry.target;
-        const target = parseFloat(el.dataset.count);
-        animateCount(el, target);
-        io.unobserve(el);
-      }
+    ScrollTrigger.create({
+      trigger: el, start: 'top 82%', once: true,
+      onEnter: () => {
+        gsap.to(proxy, {
+          val: target, duration: 2, ease: 'power3.out',
+          onUpdate() {
+            el.textContent = prefix + (isFloat ? proxy.val.toFixed(1) : Math.round(proxy.val)) + suffix;
+          },
+        });
+      },
     });
-  }, { threshold: 0.5 });
-
-  cells.forEach(el => io.observe(el));
+  });
 })();
 
 /* ---- FAQ Accordion ---- */
@@ -203,13 +238,17 @@
 
     const priceEl = sim.querySelector('.js-sim-price');
     if (priceEl) {
-      priceEl.style.transform = 'scale(1.08)';
-      priceEl.style.opacity   = '.6';
-      setTimeout(() => {
-        priceEl.textContent    = price.toLocaleString('fr-FR') + ' €';
-        priceEl.style.transform = '';
-        priceEl.style.opacity   = '';
-      }, 90);
+      if (typeof gsap !== 'undefined') {
+        gsap.to(priceEl, {
+          scale: 0.92, autoAlpha: 0.45, duration: 0.12, ease: 'power2.in',
+          onComplete() {
+            priceEl.textContent = price.toLocaleString('fr-FR') + ' €';
+            gsap.to(priceEl, { scale: 1, autoAlpha: 1, duration: 0.35, ease: 'back.out(2)' });
+          },
+        });
+      } else {
+        priceEl.textContent = price.toLocaleString('fr-FR') + ' €';
+      }
     }
   }
 
@@ -311,52 +350,52 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 })();
 
-/* ---- Cursor-following image on prestations list ---- */
+/* ---- GSAP: Cursor-following image on prestations list ---- */
 (function () {
   const rows = document.querySelectorAll('.prest-row[data-img]');
   const cursorImg = document.getElementById('prestCursorImg');
   if (!rows.length || !cursorImg) return;
-
-  // Disable on touch devices
   if (window.matchMedia('(hover: none)').matches) return;
 
   const img = cursorImg.querySelector('img');
-  let mouseX = 0, mouseY = 0;
-  let curX = 0, curY = 0;
-  let rafId = null;
-  let isVisible = false;
 
-  function lerp(a, b, t) { return a + (b - a) * t; }
+  if (typeof gsap !== 'undefined') {
+    // GSAP quickTo for buttery-smooth tracking
+    const xTo = gsap.quickTo(cursorImg, 'left', { duration: 0.5, ease: 'power3' });
+    const yTo = gsap.quickTo(cursorImg, 'top',  { duration: 0.5, ease: 'power3' });
 
-  function animate() {
-    curX = lerp(curX, mouseX, 0.1);
-    curY = lerp(curY, mouseY, 0.1);
-    cursorImg.style.left = curX + 'px';
-    cursorImg.style.top  = curY + 'px';
-    if (isVisible) rafId = requestAnimationFrame(animate);
+    document.addEventListener('mousemove', e => { xTo(e.clientX); yTo(e.clientY); });
+
+    rows.forEach(row => {
+      row.addEventListener('mouseenter', () => {
+        const src = row.dataset.img;
+        if (img && src) img.src = src;
+        cursorImg.classList.add('is-visible');
+      });
+      row.addEventListener('mouseleave', () => cursorImg.classList.remove('is-visible'));
+    });
+  } else {
+    // Fallback: lerp RAF
+    let mouseX = 0, mouseY = 0, curX = 0, curY = 0, rafId = null, isVisible = false;
+    document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+    function animate() {
+      curX += (mouseX - curX) * 0.1; curY += (mouseY - curY) * 0.1;
+      cursorImg.style.left = curX + 'px'; cursorImg.style.top = curY + 'px';
+      if (isVisible) rafId = requestAnimationFrame(animate);
+    }
+    rows.forEach(row => {
+      row.addEventListener('mouseenter', () => {
+        const src = row.dataset.img;
+        if (img && src) img.src = src;
+        isVisible = true; cursorImg.classList.add('is-visible');
+        if (!rafId) rafId = requestAnimationFrame(animate);
+      });
+      row.addEventListener('mouseleave', () => {
+        isVisible = false; cursorImg.classList.remove('is-visible');
+        cancelAnimationFrame(rafId); rafId = null;
+      });
+    });
   }
-
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  rows.forEach(row => {
-    row.addEventListener('mouseenter', () => {
-      const src = row.dataset.img;
-      if (img && src) img.src = src;
-      isVisible = true;
-      cursorImg.classList.add('is-visible');
-      if (!rafId) rafId = requestAnimationFrame(animate);
-    });
-
-    row.addEventListener('mouseleave', () => {
-      isVisible = false;
-      cursorImg.classList.remove('is-visible');
-      cancelAnimationFrame(rafId);
-      rafId = null;
-    });
-  });
 })();
 
 /* ---- Drag-scroll horizontal strip ---- */
