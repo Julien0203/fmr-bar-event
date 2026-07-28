@@ -59,12 +59,12 @@
   if (!document.querySelector('.hero__content')) return;
 
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.15 });
-  tl.from('.hero__eyebrow', { y: 22, autoAlpha: 0, duration: 0.75 })
-    .from('.hero__h1',      { y: 36, autoAlpha: 0, duration: 1.0  }, '-=0.45')
-    .from('.hero__sub',     { y: 20, autoAlpha: 0, duration: 0.75 }, '-=0.5')
-    .from('.hero__actions', { y: 18, autoAlpha: 0, duration: 0.65 }, '-=0.45')
-    .from('.hero__scroll',  { autoAlpha: 0, duration: 0.6 }, '-=0.25')
-    .from('.hero__kpis-bar',{ y: 12, autoAlpha: 0, duration: 0.5  }, '-=0.3');
+  tl.fromTo('.hero__eyebrow', { y: 22, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.75 })
+    .fromTo('.hero__h1',      { y: 36, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1.0  }, '-=0.45')
+    .fromTo('.hero__sub',     { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.75 }, '-=0.5')
+    .fromTo('.hero__actions', { y: 18, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.65 }, '-=0.45')
+    .fromTo('.hero__scroll',  { autoAlpha: 0 },         { autoAlpha: 1, duration: 0.6 }, '-=0.25')
+    .fromTo('.hero__kpis-bar',{ y: 12, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5  }, '-=0.3');
 })();
 
 /* ---- GSAP: Parallax hero photo ---- */
@@ -94,10 +94,10 @@
         el.classList.contains('reveal--delay-2') ? 0.2 :
         el.classList.contains('reveal--delay-1') ? 0.1 : 0;
 
-      gsap.from(el, {
-        scrollTrigger: { trigger: el, start: 'top 88%', once: true },
-        y: 40, autoAlpha: 0, duration: 0.8, delay,
-      });
+      gsap.fromTo(el,
+        { y: 40, autoAlpha: 0 },
+        { scrollTrigger: { trigger: el, start: 'top 88%', once: true }, y: 0, autoAlpha: 1, duration: 0.8, delay }
+      );
     });
   });
 
