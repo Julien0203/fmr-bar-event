@@ -58,13 +58,14 @@
   if (typeof gsap === 'undefined') return;
   if (!document.querySelector('.hero__content')) return;
 
+  const $ = s => document.querySelector(s);
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.15 });
-  tl.fromTo('.hero__eyebrow', { y: 22, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.75 })
-    .fromTo('.hero__h1',      { y: 36, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1.0  }, '-=0.45')
-    .fromTo('.hero__sub',     { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.75 }, '-=0.5')
-    .fromTo('.hero__actions', { y: 18, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.65 }, '-=0.45')
-    .fromTo('.hero__scroll',  { autoAlpha: 0 },         { autoAlpha: 1, duration: 0.6 }, '-=0.25')
-    .fromTo('.hero__kpis-bar',{ y: 12, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5  }, '-=0.3');
+  if ($('.hero__eyebrow')) tl.fromTo('.hero__eyebrow', { y: 22, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.75 });
+  if ($('.hero__h1'))      tl.fromTo('.hero__h1',      { y: 36, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1.0  }, '-=0.45');
+  if ($('.hero__sub'))     tl.fromTo('.hero__sub',     { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.75 }, '-=0.5');
+  if ($('.hero__actions')) tl.fromTo('.hero__actions', { y: 18, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.65 }, '-=0.45');
+  if ($('.hero__scroll'))  tl.fromTo('.hero__scroll',  { autoAlpha: 0 },        { autoAlpha: 1, duration: 0.6 }, '-=0.25');
+  if ($('.hero__kpis-bar'))tl.fromTo('.hero__kpis-bar',{ y: 12, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5  }, '-=0.3');
 })();
 
 /* ---- GSAP: Parallax hero photo ---- */
