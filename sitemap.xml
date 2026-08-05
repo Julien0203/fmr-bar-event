@@ -64,4 +64,32 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.fmr-bar-event.fr/blog</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fmr-bar-event.fr/blog/bar-cocktail-mariage-luberon</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fmr-bar-event.fr/blog/anniversaire-avignon-vaucluse</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fmr-bar-event.fr/blog/evenement-entreprise-herault</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
