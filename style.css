@@ -2736,20 +2736,29 @@ input, select, textarea { font-family: inherit; }
 }
 .menu-item.open .menu-item__photo img { transform: scale(1.04); }
 
-/* ─ Dual-photo layout ─ */
+/* ─ Dual-photo layout : deux cercles overlappants ─ */
 .menu-item__dual {
+  position: relative;
   overflow: visible;
   background: none;
-  aspect-ratio: unset;
   border-radius: 0;
-  position: relative;
+  /* Container hauteur = ratio 5/6 — laisse de la place aux deux cercles */
+  aspect-ratio: 5/6;
 }
+/* Grand cercle : haut-droite */
 .dual__main {
-  position: relative;
-  aspect-ratio: 4/5;
-  border-radius: 0 0 var(--r) var(--r);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 76%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
   overflow: hidden;
   background: var(--c-noir-3);
+  box-shadow:
+    0 0 0 1px rgba(255,194,75,.1),
+    0 10px 40px rgba(0,0,0,.5);
+  z-index: 1;
 }
 .dual__main img {
   width: 100%; height: 100%;
@@ -2757,24 +2766,36 @@ input, select, textarea { font-family: inherit; }
   display: block;
   transition: transform var(--tr-slow);
 }
-.menu-item.open .dual__main img { transform: scale(1.04); }
+.menu-item.open .dual__main img { transform: scale(1.05); }
+/* Petit cercle : bas-gauche, légèrement plus petit */
 .dual__accent {
   position: absolute;
-  left: -.6rem;
-  bottom: -.6rem;
-  width: clamp(70px, 30%, 110px);
+  bottom: 0;
+  left: 0;
+  width: 62%;
   aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid var(--c-noir-2);
-  box-shadow: 0 6px 20px rgba(0,0,0,.6);
-  z-index: 2;
   background: var(--c-noir-3);
+  border: 3px solid var(--c-noir);
+  box-shadow: 0 8px 28px rgba(0,0,0,.55);
+  z-index: 2;
 }
 .dual__accent img {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform var(--tr-slow);
+}
+.menu-item.open .dual__accent img { transform: scale(1.05); }
+/* Badge Signature flottant hors des cercles */
+.menu-item__dual .dual__badge {
+  position: absolute;
+  top: .7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  white-space: nowrap;
 }
 
 /* Recipe content */
@@ -2875,8 +2896,7 @@ input, select, textarea { font-family: inherit; }
     max-height: 1000px;
   }
   .menu-item__photo { aspect-ratio: 16/9; }
-  .menu-item__dual .dual__main { aspect-ratio: 16/9; }
-  .dual__accent { width: clamp(60px, 22%, 90px); left: -.4rem; bottom: -.4rem; }
+  /* Sur mobile, les deux cercles gardent leur composition — pas d'override aspect-ratio */
 }
 
 @media (max-width: 560px) {
