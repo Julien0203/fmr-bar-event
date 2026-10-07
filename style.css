@@ -3221,10 +3221,17 @@ video::-webkit-media-controls-overlay-play-button { display: none !important; op
 .testi-nav:hover { border-color: var(--c-or); box-shadow: 0 0 16px rgba(255,194,75,.15); }
 .testi-nav[disabled] { opacity: 0.2; cursor: default; pointer-events: none; }
 @media (max-width: 860px) {
-  .testi-carousel { padding: 0 2.8rem; }
-  .testi-carousel__track .testi-card { flex: 0 0 calc(100% - 2rem); }
-  .cktl-nav--prev { left: 0.4rem; }
-  .cktl-nav--next { right: 0.4rem; }
+  .testi-carousel { padding: 0; overflow: hidden; }
+  .testi-carousel__track {
+    padding: 0 1.5rem;
+    scroll-padding-inline: 1.5rem;
+    gap: 1rem;
+  }
+  .testi-carousel__track .testi-card {
+    flex: 0 0 calc(100vw - 3rem);
+    scroll-snap-align: center;
+  }
+  .testi-nav { display: none; }
 }
 
 /* ---- Mentions légales ---- */
