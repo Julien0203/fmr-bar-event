@@ -583,3 +583,24 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     upd();
   });
 })();
+
+/* ---- Safari iOS autoplay fallback ---- */
+(function () {
+  function tryPlayAll() {
+    document.querySelectorAll('video[autoplay]').forEach(function (v) {
+      if (v.paused) {
+        v.play().catch(function () {});
+      }
+    });
+  }
+  /* Retry on first user interaction (Safari requires gesture for autoplay in some modes) */
+  ['touchstart', 'touchend', 'click'].forEach(function (evt) {
+    document.addEventListener(evt, tryPlayAll, { once: true, passive: true });
+  });
+  /* Retry when page becomes visible (e.g. tab switch, app resume) */
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) tryPlayAll();
+  });
+  /* Initial attempt after load */
+  window.addEventListener('load', tryPlayAll);
+})();

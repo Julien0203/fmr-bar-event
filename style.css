@@ -427,8 +427,14 @@ input, select, textarea { font-family: inherit; }
   object-position: center center;
   opacity: .52;
   filter: saturate(0.85);
-  /* Pas de transform scale — la vidéo est déjà animée */
 }
+
+/* Safari iOS : masquer les contrôles vidéo natifs (bouton play) */
+video::-webkit-media-controls,
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-start-playback-button,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-overlay-play-button { display: none !important; opacity: 0 !important; }
 .hero__gradient {
   position: absolute;
   inset: 0;
@@ -2898,15 +2904,21 @@ input, select, textarea { font-family: inherit; }
   .menu-item__tagline { display: none; }
   .menu-item__panel {
     grid-template-columns: 1fr;
-    padding: 0 1.5rem 0 1.5rem;
+    padding: 0 1.2rem 0 1.2rem;
     gap: 1.5rem;
   }
   .menu-item.open .menu-item__panel {
-    padding: 0 1.5rem 2rem 1.5rem;
-    max-height: 1000px;
+    padding: 0 1.2rem 2rem 1.2rem;
+    max-height: 1600px;
   }
-  .menu-item__photo { aspect-ratio: 16/9; }
-  /* Sur mobile, les deux cercles gardent leur composition — pas d'override aspect-ratio */
+  /* Photo classique rectangulaire en landscape sur mobile */
+  .menu-item__photo { aspect-ratio: 4/3; }
+  /* Dual-circles : conserver le ratio portrait 5/6 */
+  .menu-item__dual { aspect-ratio: 5/6; }
+  /* CTA pleine largeur sur mobile */
+  .menu-item__cta { width: 100%; justify-content: center; text-align: center; }
+  /* Note : éviter le débordement */
+  .menu-item__note { overflow-wrap: break-word; word-break: break-word; }
 }
 
 @media (max-width: 560px) {
@@ -3600,3 +3612,42 @@ input, select, textarea { font-family: inherit; }
   cursor: pointer; transition: all .25s; margin-top: .5rem;
 }
 .quiz__restart:hover { border-color: var(--c-or); color: var(--c-or); }
+
+/* =========================================
+   OBJECT-POSITION — Recadrage par image
+   Garantit que les verres sont toujours visibles
+   ========================================= */
+
+/* Photos existantes — Yann Bader (portrait 2:3, verre en bas) */
+img[src*="bartender-finish"]     { object-position: 55% 75%; }
+img[src*="bartender-pour"]       { object-position: center 65%; }
+img[src*="bartender-mint-smile"] { object-position: center 72%; }
+img[src*="bartender-perrier"]    { object-position: 40% 65%; }
+img[src*="bartender-garnish"]    { object-position: 55% 68%; }
+img[src*="bartender-sea"]        { object-position: center 55%; }
+img[src*="bartender-bitters"]    { object-position: center 55%; }
+img[src*="bartender-portrait"]   { object-position: center 35%; }
+img[src*="cocktails-mojito-sea"] { object-position: center 70%; }
+img[src*="event-glass"]          { object-position: center 48%; }
+img[src*="event-toast"]          { object-position: center 45%; }
+img[src*="event-bride-cheers"]   { object-position: center 40%; }
+img[src*="event-three-women"]    { object-position: center 30%; }
+img[src*="event-toast-overhead"] { object-position: center center; }
+
+/* Nouvelles images — portrait 4:5 (verre souvent centré/haut) */
+img[src*="cocktail-red-pour"]       { object-position: center 62%; }
+img[src*="cocktail-old-fashioned"]  { object-position: center 58%; }
+img[src*="cocktails-martini-trio"]  { object-position: center 52%; }
+img[src*="cocktails-duo-service"]   { object-position: center 32%; }
+img[src*="cocktail-splash"]         { object-position: center 50%; }
+img[src*="cocktail-shaker"]         { object-position: center 40%; }
+img[src*="cocktail-femme-coupe"]    { object-position: center 28%; }
+img[src*="cocktail-mojito-fresh"]   { object-position: center 55%; }
+img[src*="cocktail-mains-floral"]   { object-position: center 45%; }
+img[src*="event-trinquent-duo"]     { object-position: center 35%; }
+img[src*="cocktail-ballon-rouge"]   { object-position: center 55%; }
+img[src*="cocktail-whisky-planche"] { object-position: center 60%; }
+img[src*="cocktails-martini-close"] { object-position: center 52%; }
+
+/* Ingredient circles — toujours centré (ne pas modifier) */
+.dual__main img, .dual__accent img { object-position: center center !important; }
