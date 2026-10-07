@@ -419,6 +419,16 @@ input, select, textarea { font-family: inherit; }
   opacity: .52;
   filter: saturate(0.85);
 }
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: .52;
+  filter: saturate(0.85);
+  /* Pas de transform scale — la vidéo est déjà animée */
+}
 .hero__gradient {
   position: absolute;
   inset: 0;

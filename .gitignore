@@ -4,3 +4,18 @@ Thumbs.db
 node_modules/
 *.log
 unpacked/
+# Raw 4K source videos (transcoded versions in videos/ sont commitées)
+/1.mp4
+/2.mp4
+/3.mp4
+/4.mp4
+/5.mp4
+# PNGs bruts ingrédients à la racine (convertis en JPG dans images/ingredients/)
+/*.png
+# Dossiers et fichiers de travail non déployés
+/FMR BAR/
+/FMR/
+/cocktail/
+/FMR_Bar_Dossier_Refonte_Tricolab.docx
+images/Capture*
+"images/Yann bader*"
