@@ -250,63 +250,65 @@
 </div>
 
 <!-- COCKTAILS H-SCROLL -->
-<section class="cocktails-feat">
-  <div class="cocktails-feat__head reveal">
-    <div>
-      <p class="s-label">Nos signatures</p>
-      <h2 class="s-title">À la carte</h2>
-    </div>
-    <a href="nos-cartes.html" class="btn btn--outline" style="flex-shrink:0;">Toute la carte →</a>
+<section class="cktl-orbit-sec">
+  <div class="cktl-orbit__head reveal">
+    <p class="s-label">Nos cocktails</p>
+    <h2 class="s-title">Un cocktail<br><em>pour chaque envie</em></h2>
+    <p class="cktl-orbit__intro">Classiques intemporels ou créations exclusives — glisse pour explorer.</p>
   </div>
-  <div class="cocktails-feat__viewport">
-  <button class="cktl-nav cktl-nav--prev" aria-label="Précédent">&#8249;</button>
-  <div class="cocktails-feat__scroll js-h-scroll">
-    <div class="cktl-card">
-      <img class="cktl-card__img" src="images/cktl-mojito.jpg" alt="Mojito" loading="lazy">
-      <div class="cktl-card__info">
-        <span class="cktl-card__name">Mojito</span>
-        <span class="cktl-card__type">Classique · Frais</span>
-      </div>
+
+  <div class="cktl-orbit" id="cktlOrbit" tabindex="0" aria-roledescription="carrousel" aria-label="Nos cocktails">
+    <figure class="cktl-orb" data-i="0">
+      <img src="images/cktl-mojito.jpg" alt="Mojito" loading="lazy" draggable="false">
+      <figcaption class="cktl-orb__label">Mojito<small>Classique</small></figcaption>
+    </figure>
+    <figure class="cktl-orb" data-i="1">
+      <img src="images/cktl-fmr-spritz.jpg" alt="FMR Spritz" loading="lazy" draggable="false">
+      <figcaption class="cktl-orb__label">FMR Spritz<small>Signature</small></figcaption>
+    </figure>
+    <figure class="cktl-orb" data-i="2">
+      <img src="images/cktl-gin-tonic.jpg" alt="Gin Tonic" loading="lazy" draggable="false">
+      <figcaption class="cktl-orb__label">Gin Tonic<small>Classique</small></figcaption>
+    </figure>
+    <figure class="cktl-orb" data-i="3">
+      <img src="images/cktl-old-fashioned.jpg" alt="Old Fashioned" loading="lazy" draggable="false">
+      <figcaption class="cktl-orb__label">Old Fashioned<small>Classique</small></figcaption>
+    </figure>
+    <figure class="cktl-orb" data-i="4">
+      <img src="images/cktl-basilic-smash.jpg" alt="Basilic Smash" loading="lazy" draggable="false">
+      <figcaption class="cktl-orb__label">Basilic Smash<small>Signature</small></figcaption>
+    </figure>
+    <figure class="cktl-orb" data-i="5">
+      <img src="images/cktl-pina-colada.jpg" alt="Piña Colada" loading="lazy" draggable="false">
+      <figcaption class="cktl-orb__label">Piña Colada<small>Classique</small></figcaption>
+    </figure>
+  </div>
+
+  <div class="cktl-orbit__controls">
+    <button class="cktl-round-btn" id="cktlPrev" aria-label="Cocktail précédent">←</button>
+    <div class="cktl-orbit__count"><span id="cktlIdx">01</span> / <span>06</span></div>
+    <button class="cktl-round-btn" id="cktlNext" aria-label="Cocktail suivant">→</button>
+  </div>
+
+  <div class="cktl-detail" id="cktlDetail" aria-live="polite">
+    <div class="cktl-detail__col">
+      <p class="cktl-detail__tag" id="cktlTag">Classique</p>
+      <h3 class="cktl-detail__title" id="cktlTitle">Mojito</h3>
     </div>
-    <div class="cktl-card">
-      <img class="cktl-card__img" src="images/cktl-fmr-spritz.jpg" alt="FMR Spritz" loading="lazy">
-      <div class="cktl-card__info">
-        <span class="cktl-card__name">FMR Spritz</span>
-        <span class="cktl-card__type">Signature · Provence</span>
-      </div>
-    </div>
-    <div class="cktl-card">
-      <img class="cktl-card__img" src="images/cktl-gin-tonic.jpg" alt="Gin Tonic" loading="lazy">
-      <div class="cktl-card__info">
-        <span class="cktl-card__name">Gin Tonic</span>
-        <span class="cktl-card__type">Classique · Aromatique</span>
-      </div>
-    </div>
-    <div class="cktl-card">
-      <img class="cktl-card__img" src="images/cktl-old-fashioned.jpg" alt="Old Fashioned" loading="lazy">
-      <div class="cktl-card__info">
-        <span class="cktl-card__name">Old Fashioned</span>
-        <span class="cktl-card__type">Classique · Boisé</span>
-      </div>
-    </div>
-    <div class="cktl-card">
-      <img class="cktl-card__img" src="images/cktl-basilic-smash.jpg" alt="Basilic Smash" loading="lazy">
-      <div class="cktl-card__info">
-        <span class="cktl-card__name">Basilic Smash</span>
-        <span class="cktl-card__type">Signature · Herbacé</span>
-      </div>
-    </div>
-    <div class="cktl-card">
-      <img class="cktl-card__img" src="images/cktl-pina-colada.jpg" alt="Piña Colada" loading="lazy">
-      <div class="cktl-card__info">
-        <span class="cktl-card__name">Piña Colada</span>
-        <span class="cktl-card__type">Classique · Tropical</span>
-      </div>
+    <p class="cktl-detail__desc" id="cktlDesc">Rhum ambré, citron vert pressé, menthe fraîche — le classique intemporel, revisité avec Angostura.</p>
+    <ul class="cktl-detail__list" id="cktlList">
+      <li>Rhum ambré</li>
+      <li>Citron vert pressé</li>
+      <li>Menthe fraîche</li>
+      <li>Angostura</li>
+    </ul>
+    <div class="cktl-detail__profiles" id="cktlProfiles">
+      <span>Frais</span><span>Herbacé</span><span>Léger</span>
     </div>
   </div>
-  <button class="cktl-nav cktl-nav--next" aria-label="Suivant">&#8250;</button>
-  </div>
-  <p style="margin-top:1rem; padding:0 1.5rem; font-size:0.72rem; color:rgba(255,255,255,0.38); font-style:italic;">* La forme des verres peut changer d'un évènement à un autre, ne pas en tenir rigueur.</p>
+
+  <p class="cktl-orbit__more"><a href="nos-cartes.html">Voir toute la carte →</a></p>
+  <p class="cktl-orbit__glasses">* La forme des verres peut changer d'un évènement à un autre, ne pas en tenir rigueur.</p>
 </section>
 
 <!-- DUO FOUNDERS -->

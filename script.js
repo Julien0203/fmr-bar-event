@@ -453,21 +453,116 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 })();
 
-/* ---- Cocktail scroll arrows ---- */
+/* ---- Cocktail Orbit ---- */
 (function () {
-  var scroll = document.querySelector('.cocktails-feat__scroll');
-  var prev  = document.querySelector('.cktl-nav--prev');
-  var next  = document.querySelector('.cktl-nav--next');
-  if (!scroll || !prev || !next) return;
-  var STEP = 275;
-  function upd() {
-    prev.disabled = scroll.scrollLeft <= 1;
-    next.disabled = scroll.scrollLeft >= scroll.scrollWidth - scroll.clientWidth - 1;
+  var COCKTAILS = [
+    {
+      name: 'Mojito', tag: 'Classique',
+      desc: 'Rhum ambré, citron vert pressé, menthe fraîche — le classique intemporel, revisité avec Angostura.',
+      ings: ['Rhum ambré', 'Citron vert pressé', 'Cassonade', 'Menthe fraîche', 'Perrier', 'Angostura'],
+      profiles: ['Frais', 'Herbacé', 'Léger']
+    },
+    {
+      name: 'FMR Spritz', tag: 'Signature',
+      desc: 'Rhum infusé 48h cannelle-miel, hibiscus maison, cidre fermier — chaleureux et profond.',
+      ings: ['Rhum infusé cannelle & miel', 'Sirop d\'hibiscus', 'Cidre / Jus de pomme', 'Citron vert'],
+      profiles: ['Épicé', 'Miel', 'Chaleureux']
+    },
+    {
+      name: 'Gin Tonic', tag: 'Classique',
+      desc: 'Simple, élégant, indémodable. Le choix des connaisseurs, servi avec soin.',
+      ings: ['Gin', 'Tonic', 'Citron vert', 'Glaçons'],
+      profiles: ['Aromatique', 'Frais', 'Amer']
+    },
+    {
+      name: 'Old Fashioned', tag: 'Classique',
+      desc: 'Bourbon, orange et Angostura — le grand classique américain, boisé et profond.',
+      ings: ['Whisky Bourbon', 'Écorce d\'orange', 'Angostura', 'Sucre de canne', 'Glaçons'],
+      profiles: ['Boisé', 'Complexe', 'Raffiné']
+    },
+    {
+      name: 'Basilic Smash', tag: 'Signature',
+      desc: 'Limoncello, basilic frais et Perrier — un smash méditerranéen aux accents estivaux.',
+      ings: ['Limoncello', 'Sirop de basilic', 'Basilic frais', 'Perrier', 'Glaçons'],
+      profiles: ['Herbacé', 'Citronné', 'Estival']
+    },
+    {
+      name: 'Piña Colada', tag: 'Classique',
+      desc: 'Ananas Victoria pressé, servi dans l\'ananas. La vraie version tropicale, sans compromis.',
+      ings: ['Ananas Victoria pressé', 'Rhum ambré', 'Crème de coco', 'Sirop de vanille', 'Purée de mangue'],
+      profiles: ['Tropical', 'Crémeux', 'Exotique']
+    }
+  ];
+
+  var orbit   = document.getElementById('cktlOrbit');
+  if (!orbit) return;
+  var orbs    = Array.from(orbit.querySelectorAll('.cktl-orb'));
+  var N       = orbs.length;
+  var active  = 0;
+  var idxEl   = document.getElementById('cktlIdx');
+  var tagEl   = document.getElementById('cktlTag');
+  var titleEl = document.getElementById('cktlTitle');
+  var descEl  = document.getElementById('cktlDesc');
+  var listEl  = document.getElementById('cktlList');
+  var profEl  = document.getElementById('cktlProfiles');
+  var prevBtn = document.getElementById('cktlPrev');
+  var nextBtn = document.getElementById('cktlNext');
+  var GAP     = Math.min(200, window.innerWidth * 0.26);
+
+  function go(idx) {
+    active = ((idx % N) + N) % N;
+    orbs.forEach(function (orb, i) {
+      var d = ((i - active + N) % N);
+      var dm = d > N / 2 ? d - N : d;
+      var absD = Math.abs(dm);
+      orb.classList.toggle('is-active', i === active);
+      orb.style.transform = 'translate(-50%,-50%) translateX(' + (dm * GAP) + 'px) scale(' + Math.max(0.3, 1 - absD * 0.22) + ')';
+      orb.style.opacity   = absD >= 3 ? '0' : '1';
+      orb.style.zIndex    = 100 - absD * 10;
+      orb.style.filter    = 'brightness(' + Math.max(0.5, 1 - absD * 0.16) + ')';
+    });
+    idxEl.textContent = String(active + 1).padStart(2, '0');
+    var c = COCKTAILS[active];
+    tagEl.textContent   = c.tag;
+    titleEl.textContent = c.name;
+    descEl.textContent  = c.desc;
+    listEl.innerHTML    = c.ings.map(function (s) { return '<li>' + s + '</li>'; }).join('');
+    profEl.innerHTML    = c.profiles.map(function (s) { return '<span>' + s + '</span>'; }).join('');
+    [tagEl.parentElement, descEl, listEl, profEl].forEach(function (el, i) {
+      if (!el) return;
+      el.style.cssText += ';transition:none;opacity:0;transform:translateY(10px)';
+      (function (e, delay) {
+        requestAnimationFrame(function () {
+          e.style.transition = 'opacity 0.5s ' + delay + 's, transform 0.5s ' + delay + 's cubic-bezier(0.32,0.72,0,1)';
+          e.style.opacity = '1'; e.style.transform = 'none';
+        });
+      })(el, i * 0.07);
+    });
   }
-  prev.addEventListener('click', function () { scroll.scrollBy({ left: -STEP, behavior: 'smooth' }); });
-  next.addEventListener('click', function () { scroll.scrollBy({ left:  STEP, behavior: 'smooth' }); });
-  scroll.addEventListener('scroll', upd, { passive: true });
-  upd();
+
+  prevBtn.addEventListener('click', function () { go(active - 1); });
+  nextBtn.addEventListener('click', function () { go(active + 1); });
+  orbit.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft')  go(active - 1);
+    if (e.key === 'ArrowRight') go(active + 1);
+  });
+
+  var startX = 0, dragging = false;
+  orbit.addEventListener('mousedown',  function (e) { startX = e.clientX; dragging = true; });
+  window.addEventListener('mouseup',   function (e) {
+    if (!dragging) return; dragging = false;
+    if (Math.abs(e.clientX - startX) > 50) go(active + (e.clientX < startX ? 1 : -1));
+  });
+  orbit.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+  orbit.addEventListener('touchend',   function (e) {
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) go(active + (dx < 0 ? 1 : -1));
+  });
+  orbs.forEach(function (orb, i) {
+    orb.addEventListener('click', function () { if (i !== active) go(i); });
+  });
+
+  go(0);
 })();
 
 /* ---- Testi Carousel arrows ---- */
