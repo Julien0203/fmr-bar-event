@@ -263,7 +263,7 @@ input, select, textarea { font-family: inherit; }
   background: rgba(10,9,8,0.92);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  z-index: 99;
+  z-index: 500;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2007,7 +2007,7 @@ video::-webkit-media-controls-overlay-play-button { display: none !important; op
   width: 250px;
   aspect-ratio: 3/4;
   pointer-events: none;
-  z-index: 999;
+  z-index: 90;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 28px 70px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,194,75,0.12);

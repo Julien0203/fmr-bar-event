@@ -21,28 +21,28 @@
   if (!burger || !overlay) return;
   const body = document.body;
 
+  function closeMenu() {
+    burger.classList.remove('open');
+    overlay.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    body.style.overflow = '';
+  }
+
   burger.addEventListener('click', () => {
     const open = burger.classList.toggle('open');
     overlay.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     body.style.overflow = open ? 'hidden' : '';
   });
 
   // Close on link click
   overlay.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      burger.classList.remove('open');
-      overlay.classList.remove('open');
-      body.style.overflow = '';
-    });
+    a.addEventListener('click', closeMenu);
   });
 
   // Close on ESC
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      burger.classList.remove('open');
-      overlay.classList.remove('open');
-      body.style.overflow = '';
-    }
+    if (e.key === 'Escape') closeMenu();
   });
 })();
 
