@@ -101,8 +101,9 @@
     .info-card__list li { display:flex; gap:0.6rem; font-size:0.8rem; color:var(--c-texte); }
     .info-card__list li span:first-child { color:var(--c-or); }
     @media(max-width:900px) {
-      .resa-grid { grid-template-columns:1fr; gap:3rem; }
+      .resa-grid { grid-template-columns:1fr; gap:2rem; }
       .form-grid-2 { grid-template-columns:1fr; }
+      .resa-left, .resa-info { position:static !important; top:auto !important; }
     }
   </style>
 </head>
@@ -186,7 +187,7 @@
     <div class="resa-grid">
 
       <!-- Formulaire -->
-      <div style="position:sticky; top:calc(var(--nav-h) + 2rem); align-self:start;">
+      <div class="resa-left" style="position:sticky; top:calc(var(--nav-h) + 2rem); align-self:start;">
         <div class="resa-form-wrap reveal">
           <form class="js-resa-form" action="mailto:fmr.event84@gmail.com" method="get" novalidate>
             <div class="form-grid-2">
