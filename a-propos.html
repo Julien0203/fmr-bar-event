@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -27,9 +27,12 @@
       <li class="nav__item">
         <a href="nos-prestations.html" class="nav__link nav__link--has-dropdown">Prestations</a>
         <div class="nav__dropdown">
-          <a href="mariage.html">Mariage</a><a href="anniversaire.html">Anniversaire</a>
+          <a href="mariage.html">Mariage</a>
+          <a href="anniversaire.html">Anniversaire</a>
           <a href="entreprise.html">Événement Entreprise</a>
           <a href="soiree-privee.html">Soirée Privée</a>
+          <a href="brunch.html">Brunch</a>
+          <a href="evjf.html">EVJF</a>
         </div>
       </li>
       <li><a href="nos-cartes.html" class="nav__link">Nos Cartes</a></li>
@@ -62,8 +65,8 @@
 <!-- HERO -->
 <section class="hero" style="min-height:85vh;">
   <div class="hero__bg">
-    <video autoplay muted playsinline loop preload="metadata" disableremoteplayback x-webkit-airplay="deny"
-       class="hero__video" poster="images/autres/bartender-portrait.jpg">
+    <video autoplay muted playsinline loop preload="auto" disableremoteplayback x-webkit-airplay="deny"
+       class="hero__video" poster="images/paysage/poster-apropos.jpg">
     <source src="videos/hero-5.mp4" type="video/mp4">
   </video>
     <div class="hero__gradient"></div>
@@ -115,7 +118,7 @@
         </ul>
       </div>
       <div class="editorial__image">
-        <img src="https://images.unsplash.com/photo-1575023782549-62ca0d244b39?w=900&q=80"
+        <img src="images/autres/4-5/cocktails-martini-close.jpg"
              alt="Loïc — barman FMR Bar Event en Provence" loading="lazy" width="900" height="700">
       </div>
     </div>
@@ -138,7 +141,7 @@
         </ul>
       </div>
       <div class="editorial__image">
-        <img src="images/autres/bartender-finish.jpg"
+        <img src="images/autres/2-3/bartender-finish.jpg"
              alt="Pierre — sommelier FMR Bar Event, sélection vins Provence" loading="lazy" width="900" height="700">
       </div>
     </div>
@@ -175,29 +178,19 @@
 </section>
 
 <!-- CHIFFRES CLÉS -->
-<section class="section section--medium">
-  <div class="container">
-    <header style="text-align:center; margin-bottom:4rem;" class="reveal">
-      <p class="s-label">En quelques chiffres</p>
-      <h2 class="s-title">FMR <em>en bref</em></h2>
-    </header>
-    <div class="stats-bar reveal">
-      <div class="stat-cell">
-        <span class="stat-cell__val" data-count="150" data-suffix="+">0</span>
-        <span class="stat-cell__lbl">Événements réalisés</span>
-      </div>
-      <div class="stat-cell">
-        <span class="stat-cell__val" data-count="7">0</span>
-        <span class="stat-cell__lbl">Cocktails signatures FMR</span>
-      </div>
-      <div class="stat-cell">
-        <span class="stat-cell__val" data-count="3">0</span>
-        <span class="stat-cell__lbl">Régions couvertes</span>
-      </div>
-      <div class="stat-cell">
-        <span class="stat-cell__val" data-count="500" data-suffix="+">0</span>
-        <span class="stat-cell__lbl">Invités servis par soirée (max)</span>
-      </div>
+<section class="section section--dark stats-section">
+  <div class="reveal stats-bar--3">
+    <div class="stat-cell">
+      <span class="stat-cell__num" data-count="22">0</span>
+      <span class="stat-cell__lbl">Cocktails à la carte</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-cell__num" data-count="3">0</span>
+      <span class="stat-cell__lbl">Régions couvertes</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-cell__num" data-count="500" data-suffix="+">0</span>
+      <span class="stat-cell__lbl">Invités max. par soirée</span>
     </div>
   </div>
 </section>
@@ -301,7 +294,7 @@
 <div class="sticky-cta"><a href="reservations.html">✦ Demander un devis gratuit</a></div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-<script src="script.js" defer></script>
+<script src="script.js?v=3" defer></script>
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Gestion des cookies">

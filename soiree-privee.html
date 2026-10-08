@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -65,8 +65,8 @@
 <!-- HERO -->
 <section class="hero" style="min-height:85vh;">
   <div class="hero__bg">
-    <video autoplay muted playsinline loop preload="metadata" disableremoteplayback x-webkit-airplay="deny"
-       class="hero__video" poster="images/autres/event-elegant.jpg">
+    <video autoplay muted playsinline loop preload="auto" disableremoteplayback x-webkit-airplay="deny"
+       class="hero__video" poster="images/paysage/poster-soiree.jpg">
     <source src="videos/soiree-web.mp4" type="video/mp4">
   </video>
     <div class="hero__gradient"></div>
@@ -86,6 +86,20 @@
   </div>
 </section>
 
+<!-- EDITO SOIRÉE -->
+<section class="editorial section--medium">
+  <div class="editorial__text reveal">
+    <p class="s-label">Bar cocktail soirée privée · Provence</p>
+    <h2 class="s-title">L'ambiance qui fait<br><em>la soirée</em></h2>
+    <p class="editorial__body">Villa provençale, résidence secondaire, appartement en terrasse — FMR s'adapte à votre espace et transforme n'importe quel lieu en vrai bar de nuit.</p>
+    <p class="editorial__body">Cocktail d'accueil, service continu, dernier verre : Loïc et Pierre créent l'atmosphère et maintiennent l'énergie toute la soirée.</p>
+    <a href="reservations.html?type=soiree" class="btn btn--primary">✦ Demander un devis</a>
+  </div>
+  <div class="editorial__image">
+    <img src="images/paysage/bar-event-3.jpg" alt="Bar soirée privée Provence FMR" loading="lazy" width="900" height="700">
+  </div>
+</section>
+
 <!-- CE QU'ON INCLUT -->
 <section class="section section--dark">
   <div class="container">
@@ -95,31 +109,37 @@
     </header>
     <div class="presta-grid reveal">
       <div class="presta-card" style="cursor:default;">
+        <div class="presta-card__img"><img src="images/autres/2-3/bartender-bar.jpg" alt="Service bar soirée privée" loading="lazy"></div>
         <span class="presta-card__ico">—</span>
         <h3 class="presta-card__title">Du cocktail d'accueil au dernier verre</h3>
         <p class="presta-card__desc">On crée la progression de la soirée — cocktail de bienvenue, carte évolutive, clôture mémorable. L'ambiance monte avec la nuit.</p>
       </div>
       <div class="presta-card" style="cursor:default;">
+        <div class="presta-card__img"><img src="images/autres/2-3/cocktail-amber.jpg" alt="Cocktail signature soirée privée" loading="lazy"></div>
         <span class="presta-card__ico">—</span>
         <h3 class="presta-card__title">Cocktail signature exclusif</h3>
         <p class="presta-card__desc">Un cocktail créé pour votre soirée — votre thème, vos couleurs, votre histoire. Une création unique que vos invités ne retrouveront nulle part ailleurs.</p>
       </div>
       <div class="presta-card" style="cursor:default;">
+        <div class="presta-card__img"><img src="images/autres/2-3/event-glass.jpg" alt="Bar adapté à votre espace" loading="lazy"></div>
         <span class="presta-card__ico">—</span>
         <h3 class="presta-card__title">Adaptation à votre espace</h3>
         <p class="presta-card__desc">Résidence secondaire, villa provençale, appartement — notre bar mobile s'installe partout sans contrainte. On arrive avec tout le nécessaire.</p>
       </div>
       <div class="presta-card" style="cursor:default;">
+        <div class="presta-card__img"><img src="images/autres/2-3/bartender-mint-smile.jpg" alt="Animation bartender soirée" loading="lazy"></div>
         <span class="presta-card__ico">—</span>
         <h3 class="presta-card__title">Animation et énergie</h3>
         <p class="presta-card__desc">Loïc et Pierre ne sont pas que des barmen — ils créent l'ambiance, engagent vos invités et font de votre soirée un vrai spectacle.</p>
       </div>
       <div class="presta-card" style="cursor:default;">
+        <div class="presta-card__img"><img src="images/autres/2-3/cocktail-spritz-sea.jpg" alt="Mocktails premium soirée" loading="lazy"></div>
         <span class="presta-card__ico">—</span>
         <h3 class="presta-card__title">Mocktails premium</h3>
         <p class="presta-card__desc">Même pour ceux qui ne boivent pas — nos mocktails sont aussi soignés que les cocktails. Tout le monde est au même niveau de festivité.</p>
       </div>
       <div class="presta-card" style="cursor:default;">
+        <div class="presta-card__img"><img src="images/autres/2-3/bar-setup.jpg" alt="Installation bar incluse" loading="lazy"></div>
         <span class="presta-card__ico">—</span>
         <h3 class="presta-card__title">Installation & rangement inclus</h3>
         <p class="presta-card__desc">On arrive 1h30 avant et on laisse l'espace impeccable après. Vous ne gérez rien — ni avant, ni après.</p>
@@ -208,40 +228,7 @@
   </div>
 </section>
 
-<!-- TÉMOIGNAGES -->
-<section class="section section--medium">
-  <div class="container">
-    <h2 class="s-title reveal" style="text-align:center; margin-bottom:3rem;">Ils ont vécu la soirée avec <em>FMR</em></h2>
-    <div class="testi-carousel">
-      <button class="testi-nav testi-nav--prev" aria-label="Avis précédent">&#8249;</button>
-      <div class="testi-carousel__track">
-      <article class="testi-card reveal">
-        <div class="testi-card__stars">★★★★★</div>
-        <blockquote class="testi-card__quote">"On a organisé une soirée dans notre villa du Luberon. FMR a géré le bar de main de maître — des cocktails sublimes, une ambiance parfaite. Nos amis en parlent encore."</blockquote>
-        <div class="testi-card__author">
-          <div class="testi-card__avatar">M</div>
-          <div class="testi-card__meta">
-            <div class="testi-card__name">Marc & Julie</div>
-            <div class="testi-card__event">Soirée privée · Luberon · Août 2025</div>
-          </div>
-        </div>
-      </article>
-      <article class="testi-card reveal">
-        <div class="testi-card__stars">★★★★★</div>
-        <blockquote class="testi-card__quote">"Loïc et Pierre ont transformé notre terrasse en vrai bar de luxe. Professionnels, chaleureux, les cocktails étaient à tomber. On les rappelle sans hésiter."</blockquote>
-        <div class="testi-card__author">
-          <div class="testi-card__avatar">C</div>
-          <div class="testi-card__meta">
-            <div class="testi-card__name">Claire F.</div>
-            <div class="testi-card__event">Soirée privée · Avignon · Septembre 2025</div>
-          </div>
-        </div>
-      </article>
-      </div>
-      <button class="testi-nav testi-nav--next" aria-label="Avis suivant">&#8250;</button>
-    </div>
-  </div>
-</section>
+
 
 <!-- CTA -->
 <section class="cta-block section--dark">
@@ -253,6 +240,27 @@
       <a href="reservations.html?type=soiree" class="btn btn--primary">✦ Devis soirée privée</a>
       <a href="tel:+33676972108" class="btn btn--outline">06 76 97 21 08</a>
     </div>
+  </div>
+</section>
+
+
+<!-- AVIS CLIENTS CAROUSEL -->
+<section class="reviews-section">
+  <div class="container">
+    <div class="reviews-section__hd reveal">
+      <p class="s-label">Témoignages</p>
+      <h2 class="s-title">Ce qu'ils <em>disent de nous</em></h2>
+      <div class="reviews-section__meta">
+        <span class="reviews-section__stars">★★★★★</span>
+        <span class="reviews-section__note">5 / 5 &nbsp;·&nbsp; <a href="https://www.google.com/maps/place/FMR+Bar+Event/@44.4890258,4.6697976,8z/data=!4m8!3m7!1s0xaec8f88067e0f795:0x52aa6aa0732cb2b3!8m2!3d44.4890258!4d4.6697976!9m1!1b1!16s%2Fg%2F11xd2fkfw2" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.3);">28 avis Google</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="testi-carousel reviews-carousel" data-review-cat="soiree-privee">
+    <button class="testi-nav testi-nav--prev" aria-label="Avis précédent">&#8249;</button>
+    <div class="testi-carousel__track">
+    </div>
+    <button class="testi-nav testi-nav--next" aria-label="Avis suivant">&#8250;</button>
   </div>
 </section>
 
@@ -305,7 +313,7 @@
 <div class="sticky-cta"><a href="reservations.html?type=soiree">Devis soirée privée</a></div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-<script src="script.js" defer></script>
+<script src="script.js?v=3" defer></script>
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Gestion des cookies">

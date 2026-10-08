@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=6">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -65,6 +65,9 @@
   <a href="mariage.html" class="nav__mobile-link">Mariage</a>
   <a href="anniversaire.html" class="nav__mobile-link">Anniversaire</a>
   <a href="entreprise.html" class="nav__mobile-link">Entreprise</a>
+  <a href="evjf.html" class="nav__mobile-link">EVJF</a>
+  <a href="soiree-privee.html" class="nav__mobile-link">Soirée Privée</a>
+  <a href="brunch.html" class="nav__mobile-link">Brunch</a>
   <div class="nav__mobile-sep"></div>
   <a href="nos-cartes.html" class="nav__mobile-link">Nos Cartes</a>
   <a href="a-propos.html" class="nav__mobile-link">Notre Histoire</a>
@@ -76,8 +79,8 @@
 <!-- HERO -->
 <section class="hero" style="min-height:75vh;">
   <div class="hero__bg">
-    <video autoplay muted playsinline loop preload="metadata" disableremoteplayback x-webkit-airplay="deny"
-       class="hero__video" poster="images/autres/cocktails-trio.jpg">
+    <video autoplay muted playsinline loop preload="auto" disableremoteplayback x-webkit-airplay="deny"
+       class="hero__video" poster="images/paysage/poster-noscartes.jpg">
     <source src="videos/nos-cartes.mp4" type="video/mp4">
   </video>
     <div class="hero__gradient"></div>
@@ -106,6 +109,7 @@
         <button class="filter-tab active" data-filter="all">Tout voir</button>
         <button class="filter-tab" data-filter="classique">Classiques</button>
         <button class="filter-tab" data-filter="signature">Signatures FMR</button>
+        <button class="filter-tab" data-filter="creation">Créations</button>
         <button class="filter-tab" data-filter="sans-alcool">Sans alcool</button>
         <button class="filter-tab" data-filter="vins">Bar à Vins</button>
       </div>
@@ -266,7 +270,7 @@
                 <img src="images/ingredients/citron-jaune.jpg" alt="Citron jaune — FMR Bar Event" loading="lazy">
               </div>
               <div class="dual__accent">
-                <img src="images/ingredients/romarin.jpg" alt="Romarin" loading="lazy">
+                <img src="images/ingredients/glacon.jpg" alt="Glaçons" loading="lazy">
               </div>
             </div>
             <div class="menu-item__recipe">
@@ -381,7 +385,7 @@
           <button class="menu-item__hd">
             <span class="menu-item__num">07</span>
             <div class="menu-item__meta">
-              <div class="menu-item__name">Malibu Coloda</div>
+              <div class="menu-item__name">Malibu Colada</div>
               <div class="menu-item__cat">Malibu & Coco</div>
             </div>
             <p class="menu-item__tagline">Tropical, doux et évocateur — un voyage aux Caraïbes en un seul verre.</p>
@@ -422,7 +426,7 @@
           <button class="menu-item__hd">
             <span class="menu-item__num">08</span>
             <div class="menu-item__meta">
-              <div class="menu-item__name">Madeleine</div>
+              <div class="menu-item__name">Madelaine</div>
               <div class="menu-item__cat">Amaretto & Café</div>
             </div>
             <p class="menu-item__tagline">Chaleureux et gourmand, aux notes d'amande, de café et d'agrumes.</p>
@@ -464,81 +468,39 @@
           <button class="menu-item__hd">
             <span class="menu-item__num">09</span>
             <div class="menu-item__meta">
-              <div class="menu-item__name">Aperol Spritz</div>
-              <div class="menu-item__cat">Prosecco & Aperol</div>
+              <div class="menu-item__name">Pink Orchard</div>
+              <div class="menu-item__cat">Pomme & Fraise</div>
             </div>
-            <p class="menu-item__tagline">Le best-seller de l'apéro — amer, pétillant, indémodable.</p>
+            <p class="menu-item__tagline">Frais, coloré, aussi beau dans le verre qu'en bouche.</p>
             <span class="menu-item__toggle" aria-hidden="true"></span>
           </button>
           <div class="menu-item__panel">
             <div class="menu-item__photo menu-item__dual">
               <div class="dual__main">
-                <img src="images/ingredients/orange.jpg" alt="Orange — FMR Bar Event" loading="lazy">
+                <img src="images/ingredients/fraise.jpg" alt="Fraise — FMR Bar Event" loading="lazy">
               </div>
               <div class="dual__accent">
-                <img src="images/ingredients/glacon.png" alt="Glaçons" loading="lazy">
+                <img src="images/ingredients/ananas.jpg" alt="Ananas" loading="lazy">
               </div>
             </div>
             <div class="menu-item__recipe">
-              <div class="menu-item__recipe-cat">Prosecco & Aperol</div>
+              <div class="menu-item__recipe-cat">Pomme & Fraise</div>
               <div class="menu-item__ing-wrap">
                 <p class="menu-item__ing-label">Ingrédients</p>
                 <ul class="menu-item__ing">
-          <li>Aperol</li>
-          <li>Prosecco brut</li>
-          <li>Eau gazeuse</li>
-          <li>Rondelle d'orange</li>
-          <li>Glaçons</li>
+          <li>Jus de pomme artisanal</li>
+          <li>Jus d'ananas frais</li>
+          <li>Sirop de fraise maison</li>
+          <li>Citron vert</li>
+          <li>Eau gazeuse Perrier</li>
                 </ul>
               </div>
               <div class="menu-item__profiles">
           <span class="menu-item__profile">Fruité</span>
-          <span class="menu-item__profile">Pétillant</span>
-          <span class="menu-item__profile">Amer</span>
+          <span class="menu-item__profile">Frais</span>
+          <span class="menu-item__profile">Coloré</span>
               </div>
-              <blockquote class="menu-item__note">« Le classique des apéros italiens, servi bien frais. »</blockquote>
-              <a href="reservations.html" class="btn btn--primary menu-item__cta">Ce cocktail pour mon événement</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu-item cocktail-item" data-cat="classique">
-          <button class="menu-item__hd">
-            <span class="menu-item__num">10</span>
-            <div class="menu-item__meta">
-              <div class="menu-item__name">Piña Colada</div>
-              <div class="menu-item__cat">Rhum & Ananas Victoria</div>
-            </div>
-            <p class="menu-item__tagline">Pressé sur place, servi dans l'ananas — la vraie version tropicale.</p>
-            <span class="menu-item__toggle" aria-hidden="true"></span>
-          </button>
-          <div class="menu-item__panel">
-            <div class="menu-item__photo menu-item__dual">
-              <div class="dual__main">
-                <img src="images/ingredients/ananas.jpg" alt="Ananas — FMR Bar Event" loading="lazy">
-              </div>
-              <div class="dual__accent">
-                <img src="images/ingredients/mangue.jpg" alt="Mangue" loading="lazy">
-              </div>
-            </div>
-            <div class="menu-item__recipe">
-              <div class="menu-item__recipe-cat">Rhum & Ananas Victoria</div>
-              <div class="menu-item__ing-wrap">
-                <p class="menu-item__ing-label">Ingrédients</p>
-                <ul class="menu-item__ing">
-          <li>Ananas Victoria pressé, servi dans l'ananas</li>
-          <li>Rhum ambré</li>
-          <li>Crème de coco</li>
-          <li>Sirop de vanille</li>
-          <li>Purée de mangue</li>
-                </ul>
-              </div>
-              <div class="menu-item__profiles">
-          <span class="menu-item__profile">Tropical</span>
-          <span class="menu-item__profile">Crémeux</span>
-          <span class="menu-item__profile">Exotique</span>
-              </div>
-              <blockquote class="menu-item__note">« Ananas Victoria pressé à la minute, servi dans son écrin naturel. »</blockquote>
+              <blockquote class="menu-item__note">« Présenté avec la même élégance que nos cocktails. »</blockquote>
               <a href="reservations.html" class="btn btn--primary menu-item__cta">Ce cocktail pour mon événement</a>
             </div>
           </div>
@@ -572,7 +534,6 @@
               <div class="dual__main">
                 <img src="images/ingredients/fraise.jpg" alt="Fraise — FMR Bar Event" loading="lazy">
               </div>
-              <span class="menu-item__badge dual__badge">Signature FMR</span>
               <div class="dual__accent">
                 <img src="images/ingredients/citron-vert.jpg" alt="Citron vert" loading="lazy">
               </div>
@@ -605,7 +566,7 @@
           <button class="menu-item__hd">
             <span class="menu-item__num">02</span>
             <div class="menu-item__meta">
-              <div class="menu-item__name">Pepper Melon</div>
+              <div class="menu-item__name">Pepper Melow</div>
               <div class="menu-item__cat">Passoa & Pastèque</div>
             </div>
             <p class="menu-item__tagline">Exotique et audacieux — le poivre de Sichuan rehausse la pastèque et la passion.</p>
@@ -616,9 +577,8 @@
               <div class="dual__main">
                 <img src="images/ingredients/pasteque.jpg" alt="Pastèque — FMR Bar Event" loading="lazy">
               </div>
-              <span class="menu-item__badge dual__badge">Signature FMR</span>
               <div class="dual__accent">
-                <img src="images/ingredients/passion.jpg" alt="Fruit de la passion" loading="lazy">
+                <img src="images/ingredients/vanille.jpg" alt="Vanille" loading="lazy">
               </div>
             </div>
             <div class="menu-item__recipe">
@@ -659,7 +619,6 @@
               <div class="dual__main">
                 <img src="images/ingredients/cannelle.jpg" alt="Cannelle — FMR Bar Event" loading="lazy">
               </div>
-              <span class="menu-item__badge dual__badge">Signature FMR</span>
               <div class="dual__accent">
                 <img src="images/ingredients/hibiscus.jpg" alt="Hibiscus" loading="lazy">
               </div>
@@ -702,7 +661,6 @@
               <div class="dual__main">
                 <img src="images/ingredients/pomme.jpg" alt="Pomme — FMR Bar Event" loading="lazy">
               </div>
-              <span class="menu-item__badge dual__badge">Signature FMR</span>
               <div class="dual__accent">
                 <img src="images/ingredients/hibiscus.jpg" alt="Hibiscus" loading="lazy">
               </div>
@@ -745,7 +703,6 @@
               <div class="dual__main">
                 <img src="images/ingredients/framboise.jpg" alt="Framboise — FMR Bar Event" loading="lazy">
               </div>
-              <span class="menu-item__badge dual__badge">Signature FMR</span>
               <div class="dual__accent">
                 <img src="images/ingredients/citron-vert.jpg" alt="Citron vert" loading="lazy">
               </div>
@@ -789,7 +746,6 @@
               <div class="dual__main">
                 <img src="images/ingredients/menthe.jpg" alt="Menthe — FMR Bar Event" loading="lazy">
               </div>
-              <span class="menu-item__badge dual__badge">Signature FMR</span>
               <div class="dual__accent">
                 <img src="images/ingredients/citron-vert.jpg" alt="Citron vert" loading="lazy">
               </div>
@@ -833,7 +789,6 @@
               <div class="dual__main">
                 <img src="images/ingredients/peche.jpg" alt="Pêche — FMR Bar Event" loading="lazy">
               </div>
-              <span class="menu-item__badge dual__badge">Signature FMR</span>
               <div class="dual__accent">
                 <img src="images/ingredients/gingembre.jpg" alt="Gingembre" loading="lazy">
               </div>
@@ -864,181 +819,6 @@
           <button class="menu-item__hd">
             <span class="menu-item__num">08</span>
             <div class="menu-item__meta">
-              <div class="menu-item__name">Ginger Old Fashioned</div>
-              <div class="menu-item__cat">Bourbon & Gingembre</div>
-            </div>
-            <p class="menu-item__tagline">L'Old Fashioned réinventé — vanille de Madagascar, ginger beer, bourbon.</p>
-            <span class="menu-item__toggle" aria-hidden="true"></span>
-          </button>
-          <div class="menu-item__panel">
-            <div class="menu-item__photo menu-item__dual">
-              <div class="dual__main">
-                <img src="images/ingredients/gingembre.jpg" alt="Gingembre — FMR Bar Event" loading="lazy">
-              </div>
-              <span class="menu-item__badge dual__badge">Signature FMR</span>
-              <div class="dual__accent">
-                <img src="images/ingredients/orange.jpg" alt="Orange" loading="lazy">
-              </div>
-            </div>
-            <div class="menu-item__recipe">
-              <div class="menu-item__recipe-cat">Bourbon & Gingembre</div>
-              <div class="menu-item__ing-wrap">
-                <p class="menu-item__ing-label">Ingrédients</p>
-                <ul class="menu-item__ing">
-          <li>Whisky Bourbon</li>
-          <li>Écorce d'orange</li>
-          <li>Angostura</li>
-          <li>Sirop de vanille de Madagascar</li>
-          <li>Ginger Beer</li>
-          <li>Glaçons</li>
-                </ul>
-              </div>
-              <div class="menu-item__profiles">
-          <span class="menu-item__profile">Boisé</span>
-          <span class="menu-item__profile">Épicé</span>
-          <span class="menu-item__profile">Profond</span>
-              </div>
-              <blockquote class="menu-item__note">« Vanille de Madagascar — un seul glaçon, technique irréprochable. »</blockquote>
-              <a href="reservations.html" class="btn btn--primary menu-item__cta">Ce cocktail pour mon événement</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu-item cocktail-item" data-cat="signature">
-          <button class="menu-item__hd">
-            <span class="menu-item__num">09</span>
-            <div class="menu-item__meta">
-              <div class="menu-item__name">L'Oléa</div>
-              <div class="menu-item__cat">Gin & Sumac</div>
-            </div>
-            <p class="menu-item__tagline">Martini provençal — gin infusé à l'huile d'olive, sumac, caviar de citron.</p>
-            <span class="menu-item__toggle" aria-hidden="true"></span>
-          </button>
-          <div class="menu-item__panel">
-            <div class="menu-item__photo menu-item__dual">
-              <div class="dual__main">
-                <img src="images/ingredients/olive.jpg" alt="Olive — FMR Bar Event" loading="lazy">
-              </div>
-              <span class="menu-item__badge dual__badge">Signature FMR</span>
-              <div class="dual__accent">
-                <img src="images/ingredients/citron-vert.jpg" alt="Citron vert" loading="lazy">
-              </div>
-            </div>
-            <div class="menu-item__recipe">
-              <div class="menu-item__recipe-cat">Gin & Sumac</div>
-              <div class="menu-item__ing-wrap">
-                <p class="menu-item__ing-label">Ingrédients</p>
-                <ul class="menu-item__ing">
-          <li>Gin infusé à l'EVOO</li>
-          <li>Sirop de Sumac</li>
-          <li>Olive</li>
-          <li>Citron vert & citron</li>
-          <li>Caviar de citron</li>
-                </ul>
-              </div>
-              <div class="menu-item__profiles">
-          <span class="menu-item__profile">Végétal</span>
-          <span class="menu-item__profile">Salin</span>
-          <span class="menu-item__profile">Unique</span>
-              </div>
-              <blockquote class="menu-item__note">« Gin infusé à l'huile d'olive extra-vierge de Provence. »</blockquote>
-              <a href="reservations.html" class="btn btn--primary menu-item__cta">Ce cocktail pour mon événement</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu-item cocktail-item" data-cat="signature">
-          <button class="menu-item__hd">
-            <span class="menu-item__num">10</span>
-            <div class="menu-item__meta">
-              <div class="menu-item__name">Le Magic Mike</div>
-              <div class="menu-item__cat">Gin & Aloe Vera</div>
-            </div>
-            <p class="menu-item__tagline">Frais, herbacé, inoubliable — gin, aloe vera et hibiscus en parfaite harmonie.</p>
-            <span class="menu-item__toggle" aria-hidden="true"></span>
-          </button>
-          <div class="menu-item__panel">
-            <div class="menu-item__photo menu-item__dual">
-              <div class="dual__main">
-                <img src="images/ingredients/aloe-vera.jpg" alt="Aloe vera — FMR Bar Event" loading="lazy">
-              </div>
-              <span class="menu-item__badge dual__badge">Signature FMR</span>
-              <div class="dual__accent">
-                <img src="images/ingredients/hibiscus.jpg" alt="Hibiscus" loading="lazy">
-              </div>
-            </div>
-            <div class="menu-item__recipe">
-              <div class="menu-item__recipe-cat">Gin & Aloe Vera</div>
-              <div class="menu-item__ing-wrap">
-                <p class="menu-item__ing-label">Ingrédients</p>
-                <ul class="menu-item__ing">
-          <li>Gin</li>
-          <li>Aloe Vera</li>
-          <li>Sirop d'hibiscus</li>
-          <li>Citron Vert</li>
-          <li>Menthe</li>
-          <li>Glaçons</li>
-                </ul>
-              </div>
-              <div class="menu-item__profiles">
-          <span class="menu-item__profile">Frais</span>
-          <span class="menu-item__profile">Herbacé</span>
-          <span class="menu-item__profile">Exclusif</span>
-              </div>
-              <blockquote class="menu-item__note">« L'aloe vera est pressé à froid le jour J. »</blockquote>
-              <a href="reservations.html" class="btn btn--primary menu-item__cta">Ce cocktail pour mon événement</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu-item cocktail-item" data-cat="signature">
-          <button class="menu-item__hd">
-            <span class="menu-item__num">11</span>
-            <div class="menu-item__meta">
-              <div class="menu-item__name">Le Jey</div>
-              <div class="menu-item__cat">Rhum & Maracuja</div>
-            </div>
-            <p class="menu-item__tagline">Rhum infusé cannelle-vanille-miel, sirop spicy, maracuja et Perrier — solaire et épicé.</p>
-            <span class="menu-item__toggle" aria-hidden="true"></span>
-          </button>
-          <div class="menu-item__panel">
-            <div class="menu-item__photo menu-item__dual">
-              <div class="dual__main">
-                <img src="images/ingredients/passion.jpg" alt="Fruit de la passion — FMR Bar Event" loading="lazy">
-              </div>
-              <span class="menu-item__badge dual__badge">Signature FMR</span>
-              <div class="dual__accent">
-                <img src="images/ingredients/cannelle.jpg" alt="Cannelle" loading="lazy">
-              </div>
-            </div>
-            <div class="menu-item__recipe">
-              <div class="menu-item__recipe-cat">Rhum & Maracuja</div>
-              <div class="menu-item__ing-wrap">
-                <p class="menu-item__ing-label">Ingrédients</p>
-                <ul class="menu-item__ing">
-          <li>Rhum infusé cannelle, vanille et miel</li>
-          <li>Jus de citron vert</li>
-          <li>Sirop spicy</li>
-          <li>Jus de Maracuja</li>
-          <li>Perrier</li>
-          <li>Glaçons</li>
-                </ul>
-              </div>
-              <div class="menu-item__profiles">
-          <span class="menu-item__profile">Épicé</span>
-          <span class="menu-item__profile">Tropical</span>
-          <span class="menu-item__profile">Solaire</span>
-              </div>
-              <blockquote class="menu-item__note">« Rhum infusé 48h — cannelle, vanille de Madagascar, miel du Luberon. »</blockquote>
-              <a href="reservations.html" class="btn btn--primary menu-item__cta">Ce cocktail pour mon événement</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu-item cocktail-item" data-cat="signature">
-          <button class="menu-item__hd">
-            <span class="menu-item__num">12</span>
-            <div class="menu-item__meta">
               <div class="menu-item__name">Lemon Basil Smash</div>
               <div class="menu-item__cat">Limoncello & Basilic</div>
             </div>
@@ -1050,7 +830,6 @@
               <div class="dual__main">
                 <img src="images/ingredients/basilic.jpg" alt="Basilic frais — FMR Bar Event" loading="lazy">
               </div>
-              <span class="menu-item__badge dual__badge">Signature FMR</span>
               <div class="dual__accent">
                 <img src="images/ingredients/citron-jaune.jpg" alt="Citron — Limoncello" loading="lazy">
               </div>
@@ -1081,6 +860,146 @@
       </div>
     </div>
 
+    <!-- CRÉATIONS -->
+    <div id="creations" style="margin-bottom:6rem;">
+      <div class="reveal" style="margin-bottom:2.5rem;">
+        <p class="s-label">Recettes inédites FMR</p>
+        <h2 class="s-title">Nos <em>créations</em></h2>
+        <p class="s-desc">Trois cocktails conçus de A à Z par FMR — techniques avancées, ingrédients rares, expérience unique.</p>
+      </div>
+      <div class="menu-list">
+
+        <div class="menu-item cocktail-item" data-cat="creation">
+          <button class="menu-item__hd">
+            <span class="menu-item__num">01</span>
+            <div class="menu-item__meta">
+              <div class="menu-item__name">Ginger Old Fashioned</div>
+              <div class="menu-item__cat">Bourbon & Gingembre</div>
+            </div>
+            <p class="menu-item__tagline">L'Old Fashioned réinventé — vanille de Madagascar, ginger beer, bourbon.</p>
+            <span class="menu-item__toggle" aria-hidden="true"></span>
+          </button>
+          <div class="menu-item__panel">
+            <div class="menu-item__photo menu-item__dual">
+              <div class="dual__main">
+                <img src="images/ingredients/gingembre.jpg" alt="Gingembre — FMR Bar Event" loading="lazy">
+              </div>
+              <div class="dual__accent">
+                <img src="images/ingredients/orange.jpg" alt="Orange" loading="lazy">
+              </div>
+            </div>
+            <div class="menu-item__recipe">
+              <div class="menu-item__recipe-cat">Bourbon & Gingembre</div>
+              <div class="menu-item__ing-wrap">
+                <p class="menu-item__ing-label">Ingrédients</p>
+                <ul class="menu-item__ing">
+          <li>Whisky Bourbon</li>
+          <li>Écorce d'orange</li>
+          <li>Angostura</li>
+          <li>Sirop de vanille de Madagascar</li>
+          <li>Ginger Beer</li>
+          <li>Glaçons</li>
+                </ul>
+              </div>
+              <div class="menu-item__profiles">
+          <span class="menu-item__profile">Boisé</span>
+          <span class="menu-item__profile">Épicé</span>
+          <span class="menu-item__profile">Profond</span>
+              </div>
+              <blockquote class="menu-item__note">« Vanille de Madagascar — un seul glaçon, technique irréprochable. »</blockquote>
+              <a href="reservations.html" class="btn btn--primary menu-item__cta">Ce cocktail pour mon événement</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item cocktail-item" data-cat="creation">
+          <button class="menu-item__hd">
+            <span class="menu-item__num">02</span>
+            <div class="menu-item__meta">
+              <div class="menu-item__name">L'Oléa</div>
+              <div class="menu-item__cat">Gin & Sumac</div>
+            </div>
+            <p class="menu-item__tagline">Martini provençal — gin infusé à l'huile d'olive, sumac, caviar de citron.</p>
+            <span class="menu-item__toggle" aria-hidden="true"></span>
+          </button>
+          <div class="menu-item__panel">
+            <div class="menu-item__photo menu-item__dual">
+              <div class="dual__main">
+                <img src="images/ingredients/olive.jpg" alt="Olive — FMR Bar Event" loading="lazy">
+              </div>
+              <div class="dual__accent">
+                <img src="images/ingredients/citron-vert.jpg" alt="Citron vert" loading="lazy">
+              </div>
+            </div>
+            <div class="menu-item__recipe">
+              <div class="menu-item__recipe-cat">Gin & Sumac</div>
+              <div class="menu-item__ing-wrap">
+                <p class="menu-item__ing-label">Ingrédients</p>
+                <ul class="menu-item__ing">
+          <li>Gin infusé à l'EVOO</li>
+          <li>Sirop de Sumac</li>
+          <li>Olive</li>
+          <li>Citron vert & citron</li>
+          <li>Caviar de citron</li>
+                </ul>
+              </div>
+              <div class="menu-item__profiles">
+          <span class="menu-item__profile">Végétal</span>
+          <span class="menu-item__profile">Salin</span>
+          <span class="menu-item__profile">Unique</span>
+              </div>
+              <blockquote class="menu-item__note">« Gin infusé à l'huile d'olive extra-vierge de Provence. »</blockquote>
+              <a href="reservations.html" class="btn btn--primary menu-item__cta">Ce cocktail pour mon événement</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item cocktail-item" data-cat="creation">
+          <button class="menu-item__hd">
+            <span class="menu-item__num">03</span>
+            <div class="menu-item__meta">
+              <div class="menu-item__name">Le Magic Mike</div>
+              <div class="menu-item__cat">Gin & Aloe Vera</div>
+            </div>
+            <p class="menu-item__tagline">Frais, herbacé, inoubliable — gin, aloe vera et hibiscus en parfaite harmonie.</p>
+            <span class="menu-item__toggle" aria-hidden="true"></span>
+          </button>
+          <div class="menu-item__panel">
+            <div class="menu-item__photo menu-item__dual">
+              <div class="dual__main">
+                <img src="images/ingredients/aloe-vera.jpg" alt="Aloe vera — FMR Bar Event" loading="lazy">
+              </div>
+              <div class="dual__accent">
+                <img src="images/ingredients/hibiscus.jpg" alt="Hibiscus" loading="lazy">
+              </div>
+            </div>
+            <div class="menu-item__recipe">
+              <div class="menu-item__recipe-cat">Gin & Aloe Vera</div>
+              <div class="menu-item__ing-wrap">
+                <p class="menu-item__ing-label">Ingrédients</p>
+                <ul class="menu-item__ing">
+          <li>Gin</li>
+          <li>Aloe Vera</li>
+          <li>Sirop d'hibiscus</li>
+          <li>Citron Vert</li>
+          <li>Menthe</li>
+          <li>Glaçons</li>
+                </ul>
+              </div>
+              <div class="menu-item__profiles">
+          <span class="menu-item__profile">Frais</span>
+          <span class="menu-item__profile">Herbacé</span>
+          <span class="menu-item__profile">Exclusif</span>
+              </div>
+              <blockquote class="menu-item__note">« L'aloe vera est pressé à froid le jour J. »</blockquote>
+              <a href="reservations.html" class="btn btn--primary menu-item__cta">Ce cocktail pour mon événement</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!-- SANS ALCOOL -->
     <div id="sans-alcool" style="margin-bottom:6rem;">
       <div class="reveal" style="margin-bottom:2.5rem;">
@@ -1102,7 +1021,7 @@
           </button>
           <div class="menu-item__panel">
             <div class="menu-item__photo">
-              <img src="images/autres/bartender-garnish.jpg" alt="Shirley Temple FMR — FMR Bar Event" loading="lazy">
+              <img src="images/autres/2-3/bartender-pour.jpg" alt="Shirley Temple FMR — FMR Bar Event" loading="lazy">
             </div>
             <div class="menu-item__recipe">
               <div class="menu-item__recipe-cat">Sans Alcool</div>
@@ -1130,48 +1049,6 @@
         <div class="menu-item cocktail-item" data-cat="sans-alcool">
           <button class="menu-item__hd">
             <span class="menu-item__num">02</span>
-            <div class="menu-item__meta">
-              <div class="menu-item__name">Pink Orchard</div>
-              <div class="menu-item__cat">Sans Alcool & Fruité</div>
-            </div>
-            <p class="menu-item__tagline">Notre mocktail phare — frais, coloré, aussi beau dans le verre qu'en bouche.</p>
-            <span class="menu-item__toggle" aria-hidden="true"></span>
-          </button>
-          <div class="menu-item__panel">
-            <div class="menu-item__photo menu-item__dual">
-              <div class="dual__main">
-                <img src="images/ingredients/fraise.jpg" alt="Fraise — FMR Bar Event" loading="lazy">
-              </div>
-              <div class="dual__accent">
-                <img src="images/ingredients/ananas.jpg" alt="Ananas" loading="lazy">
-              </div>
-            </div>
-            <div class="menu-item__recipe">
-              <div class="menu-item__recipe-cat">Sans Alcool & Fruité</div>
-              <div class="menu-item__ing-wrap">
-                <p class="menu-item__ing-label">Ingrédients</p>
-                <ul class="menu-item__ing">
-          <li>Jus de pomme artisanal</li>
-          <li>Jus d'ananas frais</li>
-          <li>Sirop de fraise maison</li>
-          <li>Citron vert</li>
-          <li>Eau gazeuse Perrier</li>
-                </ul>
-              </div>
-              <div class="menu-item__profiles">
-          <span class="menu-item__profile">Fruité</span>
-          <span class="menu-item__profile">Frais</span>
-          <span class="menu-item__profile">Coloré</span>
-              </div>
-              <blockquote class="menu-item__note">« Présenté avec la même élégance que nos cocktails. »</blockquote>
-              <a href="reservations.html" class="btn btn--primary menu-item__cta">Ce cocktail pour mon événement</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu-item cocktail-item" data-cat="sans-alcool">
-          <button class="menu-item__hd">
-            <span class="menu-item__num">03</span>
             <div class="menu-item__meta">
               <div class="menu-item__name">Mocktail Sur-Mesure</div>
               <div class="menu-item__cat">Création Personnalisée</div>
@@ -1346,7 +1223,7 @@
 <div class="sticky-cta"><a href="reservations.html">✦ Demander un devis gratuit</a></div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-<script src="script.js" defer></script>
+<script src="script.js?v=3" defer></script>
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Gestion des cookies">

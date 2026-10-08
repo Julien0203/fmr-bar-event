@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -50,6 +50,9 @@
   <a href="mariage.html" class="nav__mobile-link">Mariage</a>
   <a href="anniversaire.html" class="nav__mobile-link">Anniversaire</a>
   <a href="entreprise.html" class="nav__mobile-link">Entreprise</a>
+  <a href="evjf.html" class="nav__mobile-link">EVJF</a>
+  <a href="soiree-privee.html" class="nav__mobile-link">Soirée Privée</a>
+  <a href="brunch.html" class="nav__mobile-link">Brunch</a>
   <div class="nav__mobile-sep"></div>
   <a href="nos-cartes.html" class="nav__mobile-link">Nos Cartes</a>
   <a href="a-propos.html" class="nav__mobile-link">Notre Histoire</a>
@@ -61,8 +64,8 @@
 <!-- HERO -->
 <section class="hero" style="min-height:85vh;">
   <div class="hero__bg">
-    <video autoplay muted playsinline loop preload="metadata" disableremoteplayback x-webkit-airplay="deny"
-       class="hero__video" poster="images/paysage/prestations-hero.png">
+    <video autoplay muted playsinline loop preload="auto" disableremoteplayback x-webkit-airplay="deny"
+       class="hero__video" poster="images/paysage/poster-prestations.jpg">
     <source src="videos/prestations.mp4" type="video/mp4">
   </video>
     <div class="hero__gradient"></div>
@@ -85,8 +88,9 @@
 <!-- GRILLE PRESTATIONS -->
 <section class="section section--dark">
   <div class="container">
-    <div class="presta-grid">
+    <div class="presta-grid presta-grid--nav">
       <a href="mariage.html" class="presta-card reveal reveal--delay-1">
+        <div class="presta-card__img"><img src="images/paysage/bar-event-5.jpg" alt="Bar cocktail mariage Provence" loading="lazy"></div>
         <span class="presta-card__n">01</span>
         <span class="presta-card__ico">—</span>
         <h2 class="presta-card__title">Mariage</h2>
@@ -94,6 +98,7 @@
         <span class="presta-card__arrow">→</span>
       </a>
       <a href="anniversaire.html" class="presta-card reveal reveal--delay-2">
+        <div class="presta-card__img"><img src="images/paysage/bar-event-6.jpg" alt="Bar cocktail anniversaire Provence" loading="lazy"></div>
         <span class="presta-card__n">02</span>
         <span class="presta-card__ico">—</span>
         <h2 class="presta-card__title">Anniversaire</h2>
@@ -101,10 +106,35 @@
         <span class="presta-card__arrow">→</span>
       </a>
       <a href="entreprise.html" class="presta-card reveal reveal--delay-3">
+        <div class="presta-card__img"><img src="images/paysage/bar-event-7.jpg" alt="Bar cocktail événement entreprise" loading="lazy"></div>
         <span class="presta-card__n">03</span>
         <span class="presta-card__ico">—</span>
         <h2 class="presta-card__title">Événement Entreprise</h2>
         <p class="presta-card__desc">Séminaires, inaugurations, team building, lancements produit — professionnalisme et convivialité pour vos équipes et clients.</p>
+        <span class="presta-card__arrow">→</span>
+      </a>
+      <a href="evjf.html" class="presta-card reveal reveal--delay-1">
+        <div class="presta-card__img"><img src="images/paysage/bar-event-1.jpg" alt="Bar cocktail EVJF Provence" loading="lazy"></div>
+        <span class="presta-card__n">04</span>
+        <span class="presta-card__ico">—</span>
+        <h2 class="presta-card__title">EVJF</h2>
+        <p class="presta-card__desc">Bar à cocktails festif pour l'enterrement de vie de jeune fille. Ambiance pétillante, cocktails girly et souvenirs inoubliables pour la future mariée et ses amies.</p>
+        <span class="presta-card__arrow">→</span>
+      </a>
+      <a href="soiree-privee.html" class="presta-card reveal reveal--delay-2">
+        <div class="presta-card__img"><img src="images/paysage/bar-event-3.jpg" alt="Bar cocktail soirée privée Provence" loading="lazy"></div>
+        <span class="presta-card__n">05</span>
+        <span class="presta-card__ico">—</span>
+        <h2 class="presta-card__title">Soirée Privée</h2>
+        <p class="presta-card__desc">Du cocktail d'accueil au dernier verre de la nuit, FMR anime votre soirée privée avec talent. Villa provençale, résidence ou appartement — on s'adapte à votre espace.</p>
+        <span class="presta-card__arrow">→</span>
+      </a>
+      <a href="brunch.html" class="presta-card reveal reveal--delay-3">
+        <div class="presta-card__img"><img src="images/paysage/bar-event-4.jpg" alt="Bar cocktail brunch Provence" loading="lazy"></div>
+        <span class="presta-card__n">06</span>
+        <span class="presta-card__ico">—</span>
+        <h2 class="presta-card__title">Brunch Provençal</h2>
+        <p class="presta-card__desc">Brunch du dimanche, lendemain de fête ou brunch-mariage — cocktails doux, spritz légers et mocktails fruités pour commencer la journée avec élégance.</p>
         <span class="presta-card__arrow">→</span>
       </a>
     </div>
@@ -123,7 +153,7 @@
     <a href="reservations.html?type=soiree" class="btn btn--primary">✦ Devis soirée privée</a>
   </div>
   <div class="editorial__image">
-    <img src="images/autres/event-glass.jpg" alt="Bar soirée privée Provence" loading="lazy" width="900" height="700">
+    <img src="images/autres/2-3/event-glass.jpg" alt="Bar soirée privée Provence" loading="lazy" width="900" height="700">
   </div>
 </section>
 
@@ -139,7 +169,7 @@
     <a href="reservations.html?type=brunch" class="btn btn--primary">✦ Devis brunch</a>
   </div>
   <div class="editorial__image">
-    <img src="images/autres/cocktails-martini-trio.jpg" alt="Bar brunch Provence" loading="lazy" width="900" height="700">
+    <img src="images/autres/4-5/cocktails-martini-trio.jpg" alt="Bar brunch Provence" loading="lazy" width="900" height="700">
   </div>
 </section>
 
@@ -155,7 +185,7 @@
     <a href="reservations.html?type=garden" class="btn btn--primary">✦ Devis garden party</a>
   </div>
   <div class="editorial__image">
-    <img src="images/autres/bartender-pour.jpg" alt="Garden party Provence outdoor bar" loading="lazy" width="900" height="700">
+    <img src="images/autres/2-3/bartender-pour.jpg" alt="Garden party Provence outdoor bar" loading="lazy" width="900" height="700">
   </div>
 </section>
 
@@ -225,7 +255,7 @@
         <a href="a-propos.html" class="btn btn--outline">Découvrir notre histoire</a>
       </div>
       <div class="editorial__image">
-        <img src="images/autres/bartender-mint-smile.jpg"
+        <img src="images/autres/2-3/bartender-mint-smile.jpg"
              alt="Loïc et Pierre — FMR Bar Event Provence" loading="lazy" width="900" height="700">
       </div>
     </div>
@@ -298,7 +328,7 @@
 <div class="sticky-cta"><a href="reservations.html">✦ Demander un devis gratuit</a></div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-<script src="script.js" defer></script>
+<script src="script.js?v=3" defer></script>
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Gestion des cookies">

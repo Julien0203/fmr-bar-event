@@ -14,12 +14,12 @@
   <meta property="og:title" content="FMR Bar Event — Bar Mobile & Cocktails en Provence">
   <meta property="og:description" content="Bar mobile artisanal pour vos événements en Provence et Hérault. Cocktails signature, bar à vins, carte personnalisée.">
   <meta property="og:url" content="https://www.fmr-bar-event.fr/">
-  <meta property="og:image" content="images/autres/bartender-sea.jpg">
+  <meta property="og:image" content="images/autres/2-3/bartender-sea.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=6">
 
   <script type="application/ld+json">
   {
@@ -79,6 +79,9 @@
   <a href="mariage.html" class="nav__mobile-link">Mariage</a>
   <a href="anniversaire.html" class="nav__mobile-link">Anniversaire</a>
   <a href="entreprise.html" class="nav__mobile-link">Entreprise</a>
+  <a href="evjf.html" class="nav__mobile-link">EVJF</a>
+  <a href="soiree-privee.html" class="nav__mobile-link">Soirée Privée</a>
+  <a href="brunch.html" class="nav__mobile-link">Brunch</a>
   <div class="nav__mobile-sep"></div>
   <a href="nos-cartes.html" class="nav__mobile-link">Nos Cartes</a>
   <a href="a-propos.html" class="nav__mobile-link">Notre Histoire</a>
@@ -90,8 +93,8 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero__bg">
-    <video autoplay muted playsinline loop preload="metadata" disableremoteplayback x-webkit-airplay="deny"
-       class="hero__video" poster="images/paysage/hero-canaille-418.jpg">
+    <video autoplay muted playsinline loop preload="auto" disableremoteplayback x-webkit-airplay="deny"
+       class="hero__video" poster="images/paysage/poster-index.jpg">
     <source src="videos/accueil.mp4" type="video/mp4">
   </video>
     <div class="hero__gradient"></div>
@@ -158,7 +161,8 @@
   </div>
   <div class="prest-list js-prest-list">
     <a class="prest-row" href="mariage.html"
-       data-img="images/autres/canaille-326.jpg">
+       data-img="images/autres/2-3/canaille-326.jpg"
+       style="--row-bg:url('images/autres/2-3/canaille-326.jpg')">
       <span class="prest-row__num">01</span>
       <div class="prest-row__body">
         <span class="prest-row__name">Mariage</span>
@@ -167,7 +171,8 @@
       <span class="prest-row__arrow">↗</span>
     </a>
     <a class="prest-row" href="anniversaire.html"
-       data-img="images/autres/cocktail-spritz-hands.jpg">
+       data-img="images/autres/2-3/cocktail-spritz-hands.jpg"
+       style="--row-bg:url('images/autres/2-3/cocktail-spritz-hands.jpg')">
       <span class="prest-row__num">02</span>
       <div class="prest-row__body">
         <span class="prest-row__name">Anniversaire</span>
@@ -176,7 +181,8 @@
       <span class="prest-row__arrow">↗</span>
     </a>
     <a class="prest-row" href="entreprise.html"
-       data-img="images/autres/cocktails-mojito-sea.jpg">
+       data-img="images/autres/2-3/cocktails-mojito-sea.jpg"
+       style="--row-bg:url('images/autres/2-3/cocktails-mojito-sea.jpg')">
       <span class="prest-row__num">03</span>
       <div class="prest-row__body">
         <span class="prest-row__name">Événement Entreprise</span>
@@ -185,7 +191,8 @@
       <span class="prest-row__arrow">↗</span>
     </a>
     <a class="prest-row" href="nos-prestations.html#soiree"
-       data-img="images/autres/event-women-sea.jpg">
+       data-img="images/autres/2-3/event-women-sea.jpg"
+       style="--row-bg:url('images/autres/2-3/event-women-sea.jpg')">
       <span class="prest-row__num">04</span>
       <div class="prest-row__body">
         <span class="prest-row__name">Soirée Privée</span>
@@ -194,7 +201,8 @@
       <span class="prest-row__arrow">↗</span>
     </a>
     <a class="prest-row" href="nos-prestations.html#garden"
-       data-img="images/autres/bartender-mint-smile.jpg">
+       data-img="images/autres/2-3/bartender-mint-smile.jpg"
+       style="--row-bg:url('images/autres/2-3/bartender-mint-smile.jpg')">
       <span class="prest-row__num">05</span>
       <div class="prest-row__body">
         <span class="prest-row__name">Garden Party</span>
@@ -203,7 +211,8 @@
       <span class="prest-row__arrow">↗</span>
     </a>
     <a class="prest-row" href="nos-prestations.html#brunch"
-       data-img="images/autres/bartender-perrier.jpg">
+       data-img="images/autres/2-3/bartender-perrier.jpg"
+       style="--row-bg:url('images/autres/2-3/bartender-perrier.jpg')">
       <span class="prest-row__num">06</span>
       <div class="prest-row__body">
         <span class="prest-row__name">Brunch</span>
@@ -216,32 +225,6 @@
 
 <!-- Floating cursor image for prestations -->
 <div class="prest-cursor-img" id="prestCursorImg" aria-hidden="true"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div>
-
-<!-- BENTO GALLERY -->
-<div class="bento-gallery">
-  <div class="bento-grid">
-    <div class="bento-grid__item bento-a">
-      <img src="images/autres/bartender-portrait.jpg"
-           alt="Bar cocktail FMR — événement en Provence" loading="lazy">
-    </div>
-    <div class="bento-grid__item bento-b">
-      <img src="images/paysage/mariage-hero.png"
-           alt="Cocktail signature FMR Bar Event" loading="lazy">
-    </div>
-    <div class="bento-grid__item bento-c">
-      <img src="images/paysage/index-hero.png"
-           alt="Bar mariage Provence — FMR Bar Event" loading="lazy">
-    </div>
-    <div class="bento-grid__item bento-d">
-      <img src="images/autres/canaille-329.jpg"
-           alt="Préparation cocktail FMR Bar Event" loading="lazy">
-    </div>
-    <div class="bento-grid__item bento-e">
-      <img src="images/paysage/bento-capture-1843.jpg"
-           alt="Bartender FMR — vue mer Provence" loading="lazy">
-    </div>
-  </div>
-</div>
 
 <!-- STATEMENT LINE -->
 <div class="statement-line reveal">
@@ -260,27 +243,27 @@
 
   <div class="cktl-orbit" id="cktlOrbit" tabindex="0" aria-roledescription="carrousel" aria-label="Nos cocktails">
     <figure class="cktl-orb" data-i="0">
-      <img src="images/autres/cktl-mojito.jpg" alt="Mojito" loading="lazy" draggable="false">
+      <img src="images/autres/4-5/cktl-mojito.jpg" alt="Mojito" loading="lazy" draggable="false">
       <figcaption class="cktl-orb__label">Mojito<small>Classique</small></figcaption>
     </figure>
     <figure class="cktl-orb" data-i="1">
-      <img src="images/autres/cktl-fmr-spritz.jpg" alt="FMR Spritz" loading="lazy" draggable="false">
+      <img src="images/autres/2-3/cktl-fmr-spritz.jpg" alt="FMR Spritz" loading="lazy" draggable="false">
       <figcaption class="cktl-orb__label">FMR Spritz<small>Signature</small></figcaption>
     </figure>
     <figure class="cktl-orb" data-i="2">
-      <img src="images/autres/cktl-gin-tonic.jpg" alt="Gin Tonic" loading="lazy" draggable="false">
+      <img src="images/autres/4-5/cktl-gin-tonic.jpg" alt="Gin Tonic" loading="lazy" draggable="false">
       <figcaption class="cktl-orb__label">Gin Tonic<small>Classique</small></figcaption>
     </figure>
     <figure class="cktl-orb" data-i="3">
-      <img src="images/autres/cktl-old-fashioned.jpg" alt="Old Fashioned" loading="lazy" draggable="false">
+      <img src="images/autres/4-5/cktl-old-fashioned.jpg" alt="Old Fashioned" loading="lazy" draggable="false">
       <figcaption class="cktl-orb__label">Old Fashioned<small>Classique</small></figcaption>
     </figure>
     <figure class="cktl-orb" data-i="4">
-      <img src="images/autres/cktl-lemon-basil-smash.jpg" alt="Lemon Basil Smash" loading="lazy" draggable="false">
+      <img src="images/autres/4-5/cktl-lemon-basil-smash.jpg" alt="Lemon Basil Smash" loading="lazy" draggable="false">
       <figcaption class="cktl-orb__label">Lemon Basil Smash<small>Signature</small></figcaption>
     </figure>
     <figure class="cktl-orb" data-i="5">
-      <img src="images/autres/cktl-pina-colada.jpg" alt="Piña Colada" loading="lazy" draggable="false">
+      <img src="images/autres/4-5/cktl-pina-colada.jpg" alt="Piña Colada" loading="lazy" draggable="false">
       <figcaption class="cktl-orb__label">Piña Colada<small>Classique</small></figcaption>
     </figure>
   </div>
@@ -315,7 +298,7 @@
 <!-- DUO FOUNDERS -->
 <section class="duo">
   <div class="duo__image">
-    <img src="images/autres/bartender-bar.jpg"
+    <img src="images/autres/2-3/bartender-bar.jpg"
          alt="Loïc et Pierre — FMR Bar Event, fondateurs" loading="lazy">
     <div class="duo__image-scrim"></div>
   </div>
@@ -378,6 +361,32 @@
   </div>
 </section>
 
+<!-- BENTO GALLERY -->
+<div class="bento-gallery">
+  <div class="bento-grid">
+    <div class="bento-grid__item bento-a">
+      <img src="images/autres/2-3/bartender-portrait.jpg"
+           alt="Bar cocktail FMR — événement en Provence" loading="lazy">
+    </div>
+    <div class="bento-grid__item bento-b">
+      <img src="images/paysage/mariage-hero.png"
+           alt="Cocktail signature FMR Bar Event" loading="lazy">
+    </div>
+    <div class="bento-grid__item bento-c">
+      <img src="images/paysage/index-hero.png"
+           alt="Bar mariage Provence — FMR Bar Event" loading="lazy">
+    </div>
+    <div class="bento-grid__item bento-d">
+      <img src="images/autres/2-3/canaille-329.jpg"
+           alt="Préparation cocktail FMR Bar Event" loading="lazy">
+    </div>
+    <div class="bento-grid__item bento-e">
+      <img src="images/paysage/bento-capture-1843.jpg"
+           alt="Bartender FMR — vue mer Provence" loading="lazy">
+    </div>
+  </div>
+</div>
+
 <!-- AVIS CLIENTS CAROUSEL -->
 <section class="reviews-section">
   <div class="container">
@@ -386,109 +395,13 @@
       <h2 class="s-title">Ce qu'ils <em>disent de nous</em></h2>
       <div class="reviews-section__meta">
         <span class="reviews-section__stars">★★★★★</span>
-        <span class="reviews-section__note">4.9 / 5 &nbsp;·&nbsp; +47 avis vérifiés</span>
+        <span class="reviews-section__note">5 / 5 &nbsp;·&nbsp; <a href="https://www.google.com/maps/place/FMR+Bar+Event/@44.4890258,4.6697976,8z/data=!4m8!3m7!1s0xaec8f88067e0f795:0x52aa6aa0732cb2b3!8m2!3d44.4890258!4d4.6697976!9m1!1b1!16s%2Fg%2F11xd2fkfw2" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.3);">28 avis Google</a></span>
       </div>
     </div>
   </div>
-  <div class="testi-carousel reviews-carousel">
+  <div class="testi-carousel reviews-carousel" data-review-cat="general">
     <button class="testi-nav testi-nav--prev" aria-label="Avis précédent">&#8249;</button>
     <div class="testi-carousel__track">
-
-      <div class="testi-card">
-        <p class="testi-card__stars">★★★★★</p>
-        <p class="testi-card__quote">« Loïc et Pierre ont fait de notre vin d'honneur un moment absolument magique. Les cocktails étaient à tomber, le bar était beau, le service impeccable. »</p>
-        <div class="testi-card__author">
-          <div class="testi-card__avatar">L</div>
-          <div class="testi-card__meta">
-            <p class="testi-card__name">Laura &amp; Thomas</p>
-            <p class="testi-card__event">Mariage · Luberon · 2024</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <p class="testi-card__stars">★★★★★</p>
-        <p class="testi-card__quote">« Pour mes 40 ans, je voulais quelque chose d'exceptionnel. FMR a dépassé toutes mes attentes — des cocktails signatures uniques et une installation magnifique. »</p>
-        <div class="testi-card__author">
-          <div class="testi-card__avatar">C</div>
-          <div class="testi-card__meta">
-            <p class="testi-card__name">Camille L.</p>
-            <p class="testi-card__event">Anniversaire · Aix-en-Provence · 2024</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <p class="testi-card__stars">★★★★★</p>
-        <p class="testi-card__quote">« Notre soirée d'entreprise avait besoin d'un élément différenciant. Le bar à cocktails a créé une vraie animation — un souvenir mémorable pour toute l'équipe. »</p>
-        <div class="testi-card__author">
-          <div class="testi-card__avatar">S</div>
-          <div class="testi-card__meta">
-            <p class="testi-card__name">Sophie R.</p>
-            <p class="testi-card__event">Soirée d'entreprise · Avignon · 2023</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <p class="testi-card__stars">★★★★★</p>
-        <p class="testi-card__quote">« Un service d'une rare élégance. Chaque cocktail était une œuvre, l'ambiance parfaite pour notre mariage en Provence. Nos invités en parlent encore. »</p>
-        <div class="testi-card__author">
-          <div class="testi-card__avatar">M</div>
-          <div class="testi-card__meta">
-            <p class="testi-card__name">Marie &amp; Lucas</p>
-            <p class="testi-card__event">Mariage · Gordes · 2024</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <p class="testi-card__stars">★★★★★</p>
-        <p class="testi-card__quote">« La garden party de mes rêves ! L'installation du bar était superbe, les créations originales et délicieuses. Je recommande FMR les yeux fermés. »</p>
-        <div class="testi-card__author">
-          <div class="testi-card__avatar">É</div>
-          <div class="testi-card__meta">
-            <p class="testi-card__name">Élise P.</p>
-            <p class="testi-card__event">Garden party · Salon-de-Provence · 2024</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <p class="testi-card__stars">★★★★★</p>
-        <p class="testi-card__quote">« Du vrai professionnalisme — ponctuel, élégant, attentionné. Loïc a su adapter les cocktails aux goûts de nos invités en temps réel. Prestation cinq étoiles. »</p>
-        <div class="testi-card__author">
-          <div class="testi-card__avatar">D</div>
-          <div class="testi-card__meta">
-            <p class="testi-card__name">Delphine &amp; Marc</p>
-            <p class="testi-card__event">Mariage · Nîmes · 2023</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <p class="testi-card__stars">★★★★★</p>
-        <p class="testi-card__quote">« Pour mes 50 ans avec 80 convives, FMR a géré la soirée avec une aisance remarquable. Les mocktails pour les non-buveurs étaient tout aussi beaux. »</p>
-        <div class="testi-card__author">
-          <div class="testi-card__avatar">B</div>
-          <div class="testi-card__meta">
-            <p class="testi-card__name">Béatrice L.</p>
-            <p class="testi-card__event">Anniversaire 50 ans · Marseille · 2024</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <p class="testi-card__stars">★★★★★</p>
-        <p class="testi-card__quote">« Brunch luxueux avec des cocktails frais maison — une expérience sensorielle complète. Présentation soignée, ingrédients de qualité, barmen ultra compétents. »</p>
-        <div class="testi-card__author">
-          <div class="testi-card__avatar">I</div>
-          <div class="testi-card__meta">
-            <p class="testi-card__name">Isabelle C.</p>
-            <p class="testi-card__event">Brunch festif · Montpellier · 2024</p>
-          </div>
-        </div>
-      </div>
 
     </div>
     <button class="testi-nav testi-nav--next" aria-label="Avis suivant">&#8250;</button>
@@ -601,7 +514,7 @@
 <div class="sticky-cta"><a href="reservations.html">✦ Devis gratuit</a></div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-<script src="script.js" defer></script>
+<script src="script.js?v=3" defer></script>
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Gestion des cookies">

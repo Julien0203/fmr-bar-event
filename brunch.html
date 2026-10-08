@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -65,8 +65,8 @@
 <!-- HERO -->
 <section class="hero" style="min-height:85vh;">
   <div class="hero__bg">
-    <video autoplay muted playsinline loop preload="metadata" disableremoteplayback x-webkit-airplay="deny"
-       class="hero__video" poster="images/autres/cocktails-martini-trio.jpg">
+    <video autoplay muted playsinline loop preload="auto" disableremoteplayback x-webkit-airplay="deny"
+       class="hero__video" poster="images/paysage/poster-brunch.jpg">
     <source src="videos/brunch-web.mp4" type="video/mp4">
   </video>
     <div class="hero__gradient"></div>
@@ -86,6 +86,20 @@
   </div>
 </section>
 
+<!-- EDITO BRUNCH -->
+<section class="editorial section--medium">
+  <div class="editorial__text reveal">
+    <p class="s-label">Bar brunch mobile · Provence</p>
+    <h2 class="s-title">L'art du brunch<br><em>dans votre verre</em></h2>
+    <p class="editorial__body">De la terrasse ensoleillée au jardin privatif, FMR installe son bar brunch et fait de votre matin un moment d'exception. Mimosa, Bellini, Spritz ou mocktails fruités — tout est préparé minute avec des produits frais de saison.</p>
+    <p class="editorial__body">Lendemain de mariage, brunch du dimanche, matinée entre amis — c'est le format que les concurrents n'exploitent pas, et notre vraie différence.</p>
+    <a href="reservations.html?type=brunch" class="btn btn--primary">✦ Demander un devis brunch</a>
+  </div>
+  <div class="editorial__image">
+    <img src="images/paysage/bar-event-4.jpg" alt="Bar brunch cocktails Provence FMR" loading="lazy" width="900" height="700">
+  </div>
+</section>
+
 <!-- CE QU'ON INCLUT -->
 <section class="section section--dark">
   <div class="container">
@@ -95,31 +109,37 @@
     </header>
     <div class="presta-grid reveal">
       <div class="presta-card" style="cursor:default;">
+        <div class="presta-card__img"><img src="images/autres/2-3/cktl-fmr-spritz.jpg" alt="Cocktails brunch sur-mesure" loading="lazy"></div>
         <span class="presta-card__ico">—</span>
         <h3 class="presta-card__title">Cocktails brunch sur-mesure</h3>
         <p class="presta-card__desc">Mimosa, Bellini, Spritz, Aperol, Bloody Mary — on crée une carte adaptée à l'heure, à l'occasion et à vos invités. Doux le matin, festifs l'après-midi.</p>
       </div>
       <div class="presta-card" style="cursor:default;">
+        <div class="presta-card__img"><img src="images/autres/2-3/bartender-mojito.jpg" alt="Mocktails fruités brunch" loading="lazy"></div>
         <span class="presta-card__ico">—</span>
         <h3 class="presta-card__title">Mocktails fruités premium</h3>
         <p class="presta-card__desc">Notre point fort pour le brunch : des mocktails aussi travaillés que les cocktails. Agrumes frais, herbes, shrubs maison — un vrai bar sans alcool.</p>
       </div>
       <div class="presta-card" style="cursor:default;">
+        <div class="presta-card__img"><img src="images/autres/2-3/event-bride-toast.jpg" alt="Brunch lendemain de mariage" loading="lazy"></div>
         <span class="presta-card__ico">—</span>
         <h3 class="presta-card__title">Lendemain de mariage</h3>
         <p class="presta-card__desc">La spécialité FMR : le brunch du lendemain de mariage. Vos invités encore sous le charme, leurs verres jamais vides. La suite parfaite à votre nuit.</p>
       </div>
       <div class="presta-card" style="cursor:default;">
+        <div class="presta-card__img"><img src="images/autres/2-3/bartender-stir.jpg" alt="Bar brunch format flexible" loading="lazy"></div>
         <span class="presta-card__ico">—</span>
         <h3 class="presta-card__title">Format flexible</h3>
         <p class="presta-card__desc">2h minimum, journée entière si vous voulez. Bar mobile autonome, s'installe en intérieur comme en extérieur. Pas de contrainte de lieu.</p>
       </div>
       <div class="presta-card" style="cursor:default;">
+        <div class="presta-card__img"><img src="images/autres/2-3/bartender-mint.jpg" alt="Ingrédients frais brunch Provence" loading="lazy"></div>
         <span class="presta-card__ico">—</span>
         <h3 class="presta-card__title">Ingrédients frais du marché</h3>
         <p class="presta-card__desc">Fruits de saison, jus frais pressés, herbes fraîches — pour un brunch en Provence, seul le meilleur mérite d'être dans votre verre.</p>
       </div>
       <div class="presta-card" style="cursor:default;">
+        <div class="presta-card__img"><img src="images/autres/2-3/bar-setup.jpg" alt="Bar brunch tout inclus" loading="lazy"></div>
         <span class="presta-card__ico">—</span>
         <h3 class="presta-card__title">Tout inclus</h3>
         <p class="presta-card__desc">Bar, verres adaptés, shakers, glace, décoration — on apporte tout. Vous ne vous occupez que de vos invités.</p>
@@ -208,40 +228,7 @@
   </div>
 </section>
 
-<!-- TÉMOIGNAGES -->
-<section class="section section--medium">
-  <div class="container">
-    <h2 class="s-title reveal" style="text-align:center; margin-bottom:3rem;">Ils ont brunché avec <em>FMR</em></h2>
-    <div class="testi-carousel">
-      <button class="testi-nav testi-nav--prev" aria-label="Avis précédent">&#8249;</button>
-      <div class="testi-carousel__track">
-      <article class="testi-card reveal">
-        <div class="testi-card__stars">★★★★★</div>
-        <blockquote class="testi-card__quote">"Le lendemain de notre mariage était aussi mémorable que la veille grâce à FMR. Les Bellinis étaient divins, l'ambiance parfaite. Nos invités adoraient."</blockquote>
-        <div class="testi-card__author">
-          <div class="testi-card__avatar">L</div>
-          <div class="testi-card__meta">
-            <div class="testi-card__name">Laura & Théo</div>
-            <div class="testi-card__event">Brunch lendemain mariage · Luberon · Juin 2025</div>
-          </div>
-        </div>
-      </article>
-      <article class="testi-card reveal">
-        <div class="testi-card__stars">★★★★★</div>
-        <blockquote class="testi-card__quote">"Brunch d'équipe dans notre mas. Les mocktails fruités de FMR ont converti même les plus sceptiques. Professionnel, délicieux, une vraie valeur ajoutée."</blockquote>
-        <div class="testi-card__author">
-          <div class="testi-card__avatar">P</div>
-          <div class="testi-card__meta">
-            <div class="testi-card__name">Pierre-Yves M.</div>
-            <div class="testi-card__event">Brunch entreprise · Vaucluse · Mai 2025</div>
-          </div>
-        </div>
-      </article>
-      </div>
-      <button class="testi-nav testi-nav--next" aria-label="Avis suivant">&#8250;</button>
-    </div>
-  </div>
-</section>
+
 
 <!-- CTA -->
 <section class="cta-block section--dark">
@@ -253,6 +240,27 @@
       <a href="reservations.html?type=brunch" class="btn btn--primary">✦ Devis brunch gratuit</a>
       <a href="tel:+33676972108" class="btn btn--outline">06 76 97 21 08</a>
     </div>
+  </div>
+</section>
+
+
+<!-- AVIS CLIENTS CAROUSEL -->
+<section class="reviews-section">
+  <div class="container">
+    <div class="reviews-section__hd reveal">
+      <p class="s-label">Témoignages</p>
+      <h2 class="s-title">Ce qu'ils <em>disent de nous</em></h2>
+      <div class="reviews-section__meta">
+        <span class="reviews-section__stars">★★★★★</span>
+        <span class="reviews-section__note">5 / 5 &nbsp;·&nbsp; <a href="https://www.google.com/maps/place/FMR+Bar+Event/@44.4890258,4.6697976,8z/data=!4m8!3m7!1s0xaec8f88067e0f795:0x52aa6aa0732cb2b3!8m2!3d44.4890258!4d4.6697976!9m1!1b1!16s%2Fg%2F11xd2fkfw2" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.3);">28 avis Google</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="testi-carousel reviews-carousel" data-review-cat="brunch">
+    <button class="testi-nav testi-nav--prev" aria-label="Avis précédent">&#8249;</button>
+    <div class="testi-carousel__track">
+    </div>
+    <button class="testi-nav testi-nav--next" aria-label="Avis suivant">&#8250;</button>
   </div>
 </section>
 
@@ -305,7 +313,7 @@
 <div class="sticky-cta"><a href="reservations.html?type=brunch">Devis brunch gratuit</a></div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-<script src="script.js" defer></script>
+<script src="script.js?v=3" defer></script>
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Gestion des cookies">
