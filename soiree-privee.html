@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 
 <script type="application/ld+json">
 {
@@ -86,7 +86,7 @@
 <!-- HERO -->
 <section class="hero" style="min-height:85vh;">
   <div class="hero__bg">
-    <video autoplay muted playsinline loop preload="auto" disableremoteplayback x-webkit-airplay="deny"
+    <video autoplay muted playsinline loop preload="metadata" disableremoteplayback x-webkit-airplay="deny"
        class="hero__video" poster="images/paysage/poster-soiree.jpg">
     <source src="videos/soiree-web.mp4" type="video/mp4">
   </video>
@@ -117,7 +117,7 @@
     <a href="reservations.html?type=soiree" class="btn btn--primary">✦ Demander un devis</a>
   </div>
   <div class="editorial__image">
-    <img src="images/paysage/bar-event-3.jpg" alt="Bar soirée privée Provence FMR" loading="lazy" width="900" height="700">
+    <picture><source srcset="images/paysage/bar-event-3.webp" type="image/webp"><img src="images/paysage/bar-event-3.jpg" alt="Bar soirée privée Provence FMR" loading="lazy" width="900" height="700"></picture>
   </div>
 </section>
 
@@ -372,7 +372,7 @@
 <div class="sticky-cta"><a href="reservations.html?type=soiree">Devis soirée privée</a></div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-<script src="script.js?v=3" defer></script>
+<script src="script.js?v=4" defer></script>
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Gestion des cookies">

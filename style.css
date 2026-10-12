@@ -94,9 +94,7 @@ input, select, textarea { font-family: inherit; }
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  background: rgba(13,12,11,.82);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(13,12,11,.93);
   border: 1px solid var(--c-or-border);
   border-radius: 100px;
   box-shadow: 0 8px 40px rgba(0,0,0,.45);
@@ -260,9 +258,7 @@ input, select, textarea { font-family: inherit; }
 .nav__mobile {
   position: fixed;
   inset: 0;
-  background: rgba(10,9,8,0.92);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(10,9,8,0.97);
   z-index: 500;
   display: flex;
   flex-direction: column;
@@ -463,12 +459,10 @@ video::-webkit-media-controls-overlay-play-button { display: none !important; op
   text-transform: uppercase;
   color: var(--c-or);
   margin-bottom: 1.75rem;
-  background: rgba(255,194,75,0.12);
+  background: rgba(255,194,75,0.14);
   border: 1px solid rgba(255,194,75,0.28);
   padding: 0.4rem 1rem;
   border-radius: 100px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 .hero__eyebrow::before,
 .hero__eyebrow::after {
@@ -944,9 +938,7 @@ video::-webkit-media-controls-overlay-play-button { display: none !important; op
   inset: 0;
   transform: translateY(100%);
   transition: transform 0.44s cubic-bezier(0.32, 0.72, 0, 1);
-  background: rgba(13,11,9,0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(13,11,9,0.97);
   border-radius: var(--r-lg);
   display: flex;
   flex-direction: column;
@@ -1989,9 +1981,7 @@ video::-webkit-media-controls-overlay-play-button { display: none !important; op
   position: absolute;
   bottom: 2.5rem;
   right: 2.5rem;
-  background: rgba(13,12,11,0.78);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(13,12,11,0.92);
   border: 1px solid var(--c-or-border);
   padding: 0.7rem 1.2rem;
   border-radius: 2px;
@@ -3271,9 +3261,7 @@ video::-webkit-media-controls-overlay-play-button { display: none !important; op
   left: 0;
   right: 0;
   z-index: 9999;
-  background: rgba(14,13,11,.96);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(14,13,11,.98);
   transform: translateY(100%);
   opacity: 0;
   transition: transform .5s cubic-bezier(.25,.46,.45,.94), opacity .4s ease;
@@ -3361,11 +3349,10 @@ video::-webkit-media-controls-overlay-play-button { display: none !important; op
   position: absolute; top: 50%; transform: translateY(-50%);
   z-index: 10; width: 2.8rem; height: 2.8rem;
   border-radius: 50%;
-  background: rgba(14,13,11,.88);
+  background: rgba(14,13,11,.92);
   border: 1px solid var(--c-or-border);
   color: var(--c-or); font-size: 1.3rem; line-height: 1;
   cursor: pointer; transition: all var(--tr);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   display: flex; align-items: center; justify-content: center;
 }
 .cktl-nav--prev { left: 1.2rem; }
@@ -3397,11 +3384,10 @@ video::-webkit-media-controls-overlay-play-button { display: none !important; op
   position: absolute; top: 50%; transform: translateY(-50%);
   z-index: 10; width: 2.8rem; height: 2.8rem;
   border-radius: 50%;
-  background: rgba(14,13,11,.9);
+  background: rgba(14,13,11,.94);
   border: 1px solid var(--c-or-border);
   color: var(--c-or); font-size: 1.3rem; line-height: 1;
   cursor: pointer; transition: all var(--tr);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   display: flex; align-items: center; justify-content: center;
 }
 .testi-nav--prev { left: 0; }
@@ -3862,3 +3848,55 @@ img[src*="cocktails-martini-close"] { object-position: center 52%; }
 
 /* Ingredient circles — toujours centré (ne pas modifier) */
 .dual__main img, .dual__accent img { object-position: center center !important; }
+
+/* ================================================================
+   PREFERS-REDUCED-MOTION
+   Désactive les animations non essentielles pour les utilisateurs
+   qui ont activé "Réduire les animations" dans les préférences système.
+   ================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  /* Transitions & animations globales */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* GSAP scroll-triggered reveals — s'assurer qu'ils sont déjà visibles */
+  .reveal, [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Hero — pas de mouvement de parallaxe */
+  .hero__video, .hero__bg { transform: none !important; }
+
+  /* Preloader — sauter directement */
+  #preloader { display: none !important; }
+
+  /* Marquee — arrêter le défilement */
+  .marquee__track { animation: none !important; }
+
+  /* Flip cards — montrer le contenu statique */
+  .flip-card__back {
+    transform: none !important;
+    opacity: 0;
+  }
+  .flip-card:hover .flip-card__back,
+  .flip-card.flipped .flip-card__back {
+    opacity: 1;
+  }
+
+  /* Cursor personnalisé — masqué (curseur système utilisé) */
+  .cursor { display: none !important; }
+
+  /* Sticky CTA — transition supprimée */
+  .sticky-cta { transition: none !important; }
+
+  /* Compteurs — afficher la valeur finale directement */
+  .stat__num[data-count] { transition: none !important; }
+
+  /* Nav pill — pas de transition au scroll */
+  .nav { transition: none !important; }
+}

@@ -643,6 +643,32 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   tryPlayAll();
 })();
 
+/* ---- Pause vidéos hors écran (économise CPU/batterie) ---- */
+(function () {
+  var videos = document.querySelectorAll('video.hero__video');
+  if (!videos.length || !window.IntersectionObserver) return;
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var v = entry.target;
+      if (entry.isIntersecting) {
+        if (!prefersReducedMotion && v.paused) v.play().catch(function () {});
+      } else {
+        if (!v.paused) v.pause();
+      }
+    });
+  }, { threshold: 0.1 });
+  videos.forEach(function (v) { obs.observe(v); });
+  /* Sur prefers-reduced-motion : ne pas lancer les vidéos du tout */
+  if (prefersReducedMotion) {
+    videos.forEach(function (v) {
+      v.pause();
+      v.removeAttribute('autoplay');
+      /* Laisser le poster visible */
+    });
+  }
+})();
+
 /* ---- Avis Google (28 avis réels) ---- */
 (function () {
   var GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/FMR+Bar+Event/@44.4890258,4.6697976,8z/data=!4m8!3m7!1s0xaec8f88067e0f795:0x52aa6aa0732cb2b3!8m2!3d44.4890258!4d4.6697976!9m1!1b1!16s%2Fg%2F11xd2fkfw2';

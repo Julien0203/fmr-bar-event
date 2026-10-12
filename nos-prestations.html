@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 
 <script type="application/ld+json">
 {
@@ -85,7 +85,7 @@
 <!-- HERO -->
 <section class="hero" style="min-height:85vh;">
   <div class="hero__bg">
-    <video autoplay muted playsinline loop preload="auto" disableremoteplayback x-webkit-airplay="deny"
+    <video autoplay muted playsinline loop preload="metadata" disableremoteplayback x-webkit-airplay="deny"
        class="hero__video" poster="images/paysage/poster-prestations.jpg">
     <source src="videos/prestations.mp4" type="video/mp4">
   </video>
@@ -111,7 +111,7 @@
   <div class="container">
     <div class="presta-grid presta-grid--nav">
       <a href="mariage.html" class="presta-card reveal reveal--delay-1">
-        <div class="presta-card__img"><img src="images/paysage/bar-event-5.jpg" alt="Bar cocktail mariage Provence" loading="lazy"></div>
+        <div class="presta-card__img"><picture><source srcset="images/paysage/bar-event-5.webp" type="image/webp"><img src="images/paysage/bar-event-5.jpg" alt="Bar cocktail mariage Provence" loading="lazy"></picture></div>
         <span class="presta-card__n">01</span>
         <span class="presta-card__ico">—</span>
         <h2 class="presta-card__title">Mariage</h2>
@@ -119,7 +119,7 @@
         <span class="presta-card__arrow">→</span>
       </a>
       <a href="anniversaire.html" class="presta-card reveal reveal--delay-2">
-        <div class="presta-card__img"><img src="images/paysage/bar-event-6.jpg" alt="Bar cocktail anniversaire Provence" loading="lazy"></div>
+        <div class="presta-card__img"><picture><source srcset="images/paysage/bar-event-6.webp" type="image/webp"><img src="images/paysage/bar-event-6.jpg" alt="Bar cocktail anniversaire Provence" loading="lazy"></picture></div>
         <span class="presta-card__n">02</span>
         <span class="presta-card__ico">—</span>
         <h2 class="presta-card__title">Anniversaire</h2>
@@ -127,7 +127,7 @@
         <span class="presta-card__arrow">→</span>
       </a>
       <a href="entreprise.html" class="presta-card reveal reveal--delay-3">
-        <div class="presta-card__img"><img src="images/paysage/bar-event-7.jpg" alt="Bar cocktail événement entreprise" loading="lazy"></div>
+        <div class="presta-card__img"><picture><source srcset="images/paysage/bar-event-7.webp" type="image/webp"><img src="images/paysage/bar-event-7.jpg" alt="Bar cocktail événement entreprise" loading="lazy"></picture></div>
         <span class="presta-card__n">03</span>
         <span class="presta-card__ico">—</span>
         <h2 class="presta-card__title">Événement Entreprise</h2>
@@ -135,7 +135,7 @@
         <span class="presta-card__arrow">→</span>
       </a>
       <a href="evjf.html" class="presta-card reveal reveal--delay-1">
-        <div class="presta-card__img"><img src="images/paysage/bar-event-1.jpg" alt="Bar cocktail EVJF Provence" loading="lazy"></div>
+        <div class="presta-card__img"><picture><source srcset="images/paysage/bar-event-1.webp" type="image/webp"><img src="images/paysage/bar-event-1.jpg" alt="Bar cocktail EVJF Provence" loading="lazy"></picture></div>
         <span class="presta-card__n">04</span>
         <span class="presta-card__ico">—</span>
         <h2 class="presta-card__title">EVJF</h2>
@@ -143,7 +143,7 @@
         <span class="presta-card__arrow">→</span>
       </a>
       <a href="soiree-privee.html" class="presta-card reveal reveal--delay-2">
-        <div class="presta-card__img"><img src="images/paysage/bar-event-3.jpg" alt="Bar cocktail soirée privée Provence" loading="lazy"></div>
+        <div class="presta-card__img"><picture><source srcset="images/paysage/bar-event-3.webp" type="image/webp"><img src="images/paysage/bar-event-3.jpg" alt="Bar cocktail soirée privée Provence" loading="lazy"></picture></div>
         <span class="presta-card__n">05</span>
         <span class="presta-card__ico">—</span>
         <h2 class="presta-card__title">Soirée Privée</h2>
@@ -151,7 +151,7 @@
         <span class="presta-card__arrow">→</span>
       </a>
       <a href="brunch.html" class="presta-card reveal reveal--delay-3">
-        <div class="presta-card__img"><img src="images/paysage/bar-event-4.jpg" alt="Bar cocktail brunch Provence" loading="lazy"></div>
+        <div class="presta-card__img"><picture><source srcset="images/paysage/bar-event-4.webp" type="image/webp"><img src="images/paysage/bar-event-4.jpg" alt="Bar cocktail brunch Provence" loading="lazy"></picture></div>
         <span class="presta-card__n">06</span>
         <span class="presta-card__ico">—</span>
         <h2 class="presta-card__title">Brunch Provençal</h2>
@@ -389,7 +389,7 @@
 <div class="sticky-cta"><a href="reservations.html">✦ Demander un devis gratuit</a></div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-<script src="script.js?v=3" defer></script>
+<script src="script.js?v=4" defer></script>
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Gestion des cookies">
