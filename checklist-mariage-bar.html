@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist Bar Mariage — FMR Bar Event</title>
+  <meta name="description" content="Checklist gratuite : tout ce qu'il faut prévoir pour le bar cocktail de votre mariage. De J-12 mois au jour J, ne rien oublier.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.fmr-bar-event.fr/checklist-mariage-bar">
+  <link rel="stylesheet" href="style.css?v=8">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.fmr-bar-event.fr/"},
+      {"@type":"ListItem","position":2,"name":"Checklist bar mariage","item":"https://www.fmr-bar-event.fr/checklist-mariage-bar"}
+    ]
+  }
+  </script>
+
+  <style>
+    /* Page-specific: landing presentation */
+    .cl-hero {
+      background: var(--c-dark, #0d0d0d);
+      color: #fff;
+      padding: 120px 24px 80px;
+      text-align: center;
+    }
+    .cl-hero__eyebrow {
+      display: inline-block;
+      border: 1px solid rgba(201,168,76,.5);
+      color: var(--c-or, #c9a84c);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .cl-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cl-hero__lead {
+      font-size: 1.1rem;
+      opacity: .8;
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .cl-hero__cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cl-hero__cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--c-or, #c9a84c); color: #0d0d0d;
+      padding: 14px 28px; border-radius: 40px;
+      font-weight: 700; font-size: 15px; text-decoration: none;
+      transition: background .2s;
+    }
+    .cl-hero__cta:hover { background: #b8973e; }
+    .cl-hero__cta--ghost {
+      background: transparent; color: #fff;
+      border: 1px solid rgba(255,255,255,.3);
+    }
+    .cl-hero__cta--ghost:hover { background: rgba(255,255,255,.08); }
+
+    /* Preview section */
+    .cl-preview {
+      background: #f9f7f3;
+      padding: 80px 24px;
+    }
+    .cl-preview__inner { max-width: 900px; margin: 0 auto; }
+    .cl-preview h2 {
+      text-align: center;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 48px;
+    }
+    .cl-preview__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .cl-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .cl-card__phase {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--c-or, #c9a84c);
+      margin-bottom: 12px;
+    }
+    .cl-card h3 { font-size: 1.05rem; margin-bottom: 16px; }
+    .cl-card ul { list-style: none; padding: 0; }
+    .cl-card ul li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: .93rem; line-height: 1.5;
+      padding: 5px 0;
+      border-bottom: 1px solid #f0ede8;
+    }
+    .cl-card ul li:last-child { border-bottom: none; }
+    .cl-card ul li::before {
+      content: "☐";
+      color: #c9a84c;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* CTA section */
+    .cl-cta {
+      background: var(--c-dark, #0d0d0d);
+      color: #fff;
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .cl-cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 16px; }
+    .cl-cta p { opacity: .75; margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+    /* Print button */
+    .print-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: #0d0d0d;
+      border: none; padding: 14px 28px; border-radius: 40px;
+      font-weight: 700; font-size: 15px; cursor: pointer;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .print-btn:hover { background: #f0ede8; }
+
+    /* === PRINTABLE CHECKLIST (hidden on screen, shown on print) === */
+    @media print {
+      .nav, .cl-hero, .cl-preview, .cl-cta, .footer, .cookie-banner, .mob-bar,
+      .cl-print-hide { display: none !important; }
+      .cl-print-sheet { display: block !important; }
+      body { background: #fff; color: #000; font-family: Georgia, serif; }
+    }
+    .cl-print-sheet { display: none; }
+
+    @media (max-width: 600px) {
+      .cl-hero { padding: 100px 20px 60px; }
+      .cl-preview { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV (shared) -->
+  <nav class="nav" id="main-nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="FMR Bar Event — Accueil">
+        <img src="logo.svg" onerror="this.style.display='none'" alt="FMR" class="nav__logo-img" width="42" height="42">
+        <span class="nav__brand-text"><strong>FMR BAR EVENT</strong><small>BAR MOBILE · PROVENCE</small></span>
+      </a>
+      <button class="nav__burger" id="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-modal="true" aria-label="Menu mobile">
+      <ul class="nav__mobile-list">
+        <li><a href="nos-prestations.html">Nos prestations</a></li>
+        <li><a href="nos-cartes.html">Nos cartes</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="a-propos.html">Notre histoire</a></li>
+        <li><a href="contact.html" class="btn btn--gold nav__mobile-cta">Devis gratuit</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="cl-hero">
+    <span class="cl-hero__eyebrow">Ressource gratuite</span>
+    <h1>La checklist complète<br>pour le bar de votre mariage</h1>
+    <p class="cl-hero__lead">De J‑12 mois au jour J : tout ce qu'il faut prévoir, confirmer et vérifier pour que le bar cocktail de votre mariage soit parfait. Imprimable, cochable, offerte.</p>
+    <div class="cl-hero__cta-group">
+      <button class="cl-hero__cta print-btn" onclick="window.print()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Imprimer / Sauvegarder en PDF
+      </button>
+      <a href="reservations.html" class="cl-hero__cta cl-hero__cta--ghost">Obtenir un devis gratuit</a>
+    </div>
+  </section>
+
+  <!-- PREVIEW CHECKLIST -->
+  <section class="cl-preview">
+    <div class="cl-preview__inner">
+      <h2>Ce que contient cette checklist</h2>
+      <div class="cl-preview__grid">
+
+        <div class="cl-card">
+          <p class="cl-card__phase">J − 12 mois</p>
+          <h3>Définir le projet bar</h3>
+          <ul>
+            <li>Estimer le nombre d'invités adultes</li>
+            <li>Choisir le type de service (vin d'honneur, soirée, ou les deux)</li>
+            <li>Décider : bar alcoolisé, soft, ou mixte</li>
+            <li>Allouer un budget bar dans le budget global</li>
+            <li>Demander 3 devis à des prestataires bar mobile</li>
+          </ul>
+        </div>
+
+        <div class="cl-card">
+          <p class="cl-card__phase">J − 6 mois</p>
+          <h3>Choisir et réserver</h3>
+          <ul>
+            <li>Confirmer le prestataire bar mobile retenu</li>
+            <li>Signer le devis et verser l'acompte (30–40 %)</li>
+            <li>Définir la formule : boissons incluses ou consommables en sus</li>
+            <li>Préciser le cocktail signature (nom, goût, couleur)</li>
+            <li>Vérifier la capacité du lieu à accueillir un bar mobile</li>
+          </ul>
+        </div>
+
+        <div class="cl-card">
+          <p class="cl-card__phase">J − 3 mois</p>
+          <h3>Peaufiner les détails</h3>
+          <ul>
+            <li>Confirmer la carte complète avec le barman</li>
+            <li>Prévoir options sans alcool (mocktails, jus premium)</li>
+            <li>Préciser l'horaire d'installation du prestataire</li>
+            <li>Confirmer l'accès au lieu (parking, porte de service)</li>
+            <li>Vérifier la disponibilité eau + électricité sur site</li>
+          </ul>
+        </div>
+
+        <div class="cl-card">
+          <p class="cl-card__phase">J − 1 mois</p>
+          <h3>Logistique et confirmations</h3>
+          <ul>
+            <li>Envoyer le planning définitif au prestataire bar</li>
+            <li>Confirmer le nombre exact d'invités</li>
+            <li>Régler le solde de la prestation</li>
+            <li>Préciser les allergies / restrictions alimentaires</li>
+            <li>Demander confirmation d'assurance du prestataire</li>
+          </ul>
+        </div>
+
+        <div class="cl-card">
+          <p class="cl-card__phase">J − 1 semaine</p>
+          <h3>Derniers calages</h3>
+          <ul>
+            <li>Rappeler le prestataire pour confirmer l'horaire</li>
+            <li>Confirmer les quantités de glace et consommables</li>
+            <li>Préparer l'espace dédié au bar (table, accès)</li>
+            <li>Transmettre le numéro du wedding planner ou d'un référent</li>
+            <li>Prévoir un point de contact sur site le jour J</li>
+          </ul>
+        </div>
+
+        <div class="cl-card">
+          <p class="cl-card__phase">Jour J</p>
+          <h3>Le grand jour</h3>
+          <ul>
+            <li>Accueillir le prestataire à l'heure convenue</li>
+            <li>Vérifier l'installation avec le barman avant les invités</li>
+            <li>Confirmer l'heure de début et de fin de service</li>
+            <li>Désigner un interlocuteur côté mariés pour toute question</li>
+            <li>Profiter — c'est leur job de tout gérer !</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cl-cta">
+    <h2>Votre devis bar mariage en 48 h</h2>
+    <p>Loïc & Pierre vous répondent sous 48 heures avec une proposition sur-mesure pour votre mariage en Provence, Luberon ou Hérault.</p>
+    <a href="reservations.html" class="cl-hero__cta">Demander mon devis gratuit</a>
+  </section>
+
+  <!-- PRINTABLE SHEET (visible uniquement à l'impression) -->
+  <div class="cl-print-sheet" aria-hidden="true">
+    <div style="padding:2cm;font-family:Georgia,serif;color:#000;max-width:21cm;margin:0 auto;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5cm;border-bottom:2px solid #c9a84c;padding-bottom:.8cm;">
+        <div>
+          <h1 style="font-size:22pt;margin:0 0 4pt;">Checklist Bar Mariage</h1>
+          <p style="font-size:10pt;color:#666;margin:0;">FMR Bar Event · Bar Mobile Provence · fmr-bar-event.fr</p>
+        </div>
+        <div style="text-align:right;font-size:9pt;color:#999;">
+          <p>Mariage de ___________________</p>
+          <p>Date : ______________________</p>
+          <p>Lieu : ______________________</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1cm;">
+
+        <div>
+          <h2 style="font-size:12pt;background:#f9f7f3;padding:6pt 10pt;margin:0 0 8pt;border-left:3px solid #c9a84c;">J − 12 mois · Définir le projet bar</h2>
+          <ul style="list-style:none;padding:0;font-size:10pt;line-height:1.8;">
+            <li>☐ &nbsp;Estimer le nombre d'invités adultes</li>
+            <li>☐ &nbsp;Choisir le type de service</li>
+            <li>☐ &nbsp;Décider : alcoolisé, soft ou mixte</li>
+            <li>☐ &nbsp;Allouer un budget bar</li>
+            <li>☐ &nbsp;Demander 3 devis prestataires bar</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 style="font-size:12pt;background:#f9f7f3;padding:6pt 10pt;margin:0 0 8pt;border-left:3px solid #c9a84c;">J − 6 mois · Choisir et réserver</h2>
+          <ul style="list-style:none;padding:0;font-size:10pt;line-height:1.8;">
+            <li>☐ &nbsp;Confirmer le prestataire retenu</li>
+            <li>☐ &nbsp;Signer le devis et verser l'acompte</li>
+            <li>☐ &nbsp;Définir la formule (inclus / consommables)</li>
+            <li>☐ &nbsp;Choisir le cocktail signature</li>
+            <li>☐ &nbsp;Vérifier l'accès bar mobile au lieu</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 style="font-size:12pt;background:#f9f7f3;padding:6pt 10pt;margin:0 0 8pt;border-left:3px solid #c9a84c;">J − 3 mois · Peaufiner les détails</h2>
+          <ul style="list-style:none;padding:0;font-size:10pt;line-height:1.8;">
+            <li>☐ &nbsp;Confirmer la carte complète avec le barman</li>
+            <li>☐ &nbsp;Prévoir options sans alcool / mocktails</li>
+            <li>☐ &nbsp;Préciser l'horaire d'installation</li>
+            <li>☐ &nbsp;Confirmer l'accès au lieu (parking, porte)</li>
+            <li>☐ &nbsp;Vérifier eau + électricité sur site</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 style="font-size:12pt;background:#f9f7f3;padding:6pt 10pt;margin:0 0 8pt;border-left:3px solid #c9a84c;">J − 1 mois · Logistique</h2>
+          <ul style="list-style:none;padding:0;font-size:10pt;line-height:1.8;">
+            <li>☐ &nbsp;Envoyer le planning définitif</li>
+            <li>☐ &nbsp;Confirmer le nombre exact d'invités</li>
+            <li>☐ &nbsp;Régler le solde de la prestation</li>
+            <li>☐ &nbsp;Préciser les allergies / restrictions</li>
+            <li>☐ &nbsp;Demander confirmation d'assurance</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 style="font-size:12pt;background:#f9f7f3;padding:6pt 10pt;margin:0 0 8pt;border-left:3px solid #c9a84c;">J − 1 semaine · Derniers calages</h2>
+          <ul style="list-style:none;padding:0;font-size:10pt;line-height:1.8;">
+            <li>☐ &nbsp;Rappeler le prestataire (confirmer horaire)</li>
+            <li>☐ &nbsp;Confirmer quantités glace / consommables</li>
+            <li>☐ &nbsp;Préparer l'espace bar sur site</li>
+            <li>☐ &nbsp;Transmettre n° du wedding planner</li>
+            <li>☐ &nbsp;Prévoir un référent sur site le jour J</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 style="font-size:12pt;background:#f9f7f3;padding:6pt 10pt;margin:0 0 8pt;border-left:3px solid #c9a84c;">Jour J · Le grand jour</h2>
+          <ul style="list-style:none;padding:0;font-size:10pt;line-height:1.8;">
+            <li>☐ &nbsp;Accueillir le prestataire à l'heure</li>
+            <li>☐ &nbsp;Vérifier l'installation avant les invités</li>
+            <li>☐ &nbsp;Confirmer heure de début et de fin</li>
+            <li>☐ &nbsp;Désigner un interlocuteur côté mariés</li>
+            <li>☐ &nbsp;Profiter — c'est leur job de tout gérer !</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div style="margin-top:1.2cm;border-top:1px solid #e0dbd0;padding-top:.8cm;display:flex;justify-content:space-between;font-size:9pt;color:#888;">
+        <span>FMR Bar Event · Bar Mobile Cocktail Provence</span>
+        <span>06 76 97 21 08 · fmr-bar-event.fr</span>
+        <span>Réalisé par <strong>Tricolab</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand-col">
+          <a href="index.html" class="footer__brand-link" aria-label="FMR Bar Event — Accueil">
+            <span class="footer__logo-text">FMR BAR EVENT</span>
+          </a>
+          <p class="footer__tagline">Bar mobile cocktail<br>Provence · Luberon · Hérault</p>
+        </div>
+        <div class="footer__links-col">
+          <p class="footer__col-title">Prestations</p>
+          <ul class="footer__list">
+            <li><a href="mariage.html">Bar Mariage Provence</a></li>
+            <li><a href="evjf.html">Bar EVJF</a></li>
+            <li><a href="entreprise.html">Événement Entreprise</a></li>
+            <li><a href="nos-prestations.html">Toutes les prestations</a></li>
+          </ul>
+        </div>
+        <div class="footer__links-col">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__list">
+            <li><a href="nos-cartes.html">Nos Cartes</a></li>
+            <li><a href="a-propos.html">Notre Histoire</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="reservations.html">Devis gratuit</a></li>
+          </ul>
+        </div>
+        <div class="footer__links-col">
+          <p class="footer__col-title">Contact</p>
+          <div class="footer__contact-row"><span class="footer__contact-ico">·</span><a href="tel:+33676972108">06 76 97 21 08</a></div>
+          <div class="footer__contact-row"><span class="footer__contact-ico">·</span><a href="mailto:fmr.event84@gmail.com">fmr.event84@gmail.com</a></div>
+          <div class="footer__contact-row"><span class="footer__contact-ico">·</span>Provence · Luberon · Hérault</div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 FMR Bar Event. Réalisé par <a href="https://tricolab.fr" target="_blank" rel="noopener">Tricolab</a>.</p>
+        <a href="mentions-legales.html" class="footer__legal">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Gestion des cookies">
+    <div class="cookie-banner__inner">
+      <span class="cookie-banner__label">Confidentialité</span>
+      <p class="cookie-banner__text">Nous utilisons des cookies pour améliorer votre expérience de navigation sur ce site.</p>
+      <div class="cookie-banner__actions">
+        <button id="cookie-refuse" class="cookie-btn cookie-btn--ghost">Refuser</button>
+        <button id="cookie-accept" class="cookie-btn cookie-btn--gold">Accepter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barre d'action mobile -->
+  <nav class="mob-bar" aria-label="Actions rapides">
+    <a href="tel:+33676972108" class="mob-bar__btn mob-bar__btn--call" aria-label="Appeler">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      Appeler
+    </a>
+    <a href="https://wa.me/33676972108?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20mon%20%C3%A9v%C3%A9nement." class="mob-bar__btn mob-bar__btn--wa" aria-label="WhatsApp" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a href="reservations.html" class="mob-bar__btn mob-bar__btn--devis" aria-label="Devis gratuit">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Devis gratuit
+    </a>
+  </nav>
+
+  <script src="script.js?v=5"></script>
+</body>
+</html>

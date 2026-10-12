@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiffres clés du marché événementiel et du mariage en France — FMR Bar Event</title>
+  <meta name="description" content="Statistiques sourcées sur le marché du mariage, de l'événementiel et des spiritueux en France : mariages, budgets, filière événementielle. Sources : INSEE, UNIMEV, FranceAgriMer.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.fmr-bar-event.fr/chiffres-marche-evenementiel">
+  <link rel="stylesheet" href="style.css?v=8">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.fmr-bar-event.fr/"},
+      {"@type":"ListItem","position":2,"name":"Chiffres du marché","item":"https://www.fmr-bar-event.fr/chiffres-marche-evenementiel"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Chiffres clés du marché événementiel et du mariage en France",
+    "datePublished": "2026-10-12",
+    "dateModified": "2026-10-12",
+    "author": {"@type":"Organization","name":"FMR Bar Event"},
+    "publisher": {"@type":"Organization","name":"FMR Bar Event","url":"https://www.fmr-bar-event.fr"}
+  }
+  </script>
+
+  <style>
+    .stats-hero {
+      background: var(--c-dark, #0d0d0d);
+      color: #fff;
+      padding: 120px 24px 72px;
+      text-align: center;
+    }
+    .stats-hero__eyebrow {
+      display: inline-block;
+      border: 1px solid rgba(201,168,76,.5);
+      color: var(--c-or, #c9a84c);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .stats-hero h1 {
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .stats-hero__lead {
+      font-size: 1.05rem;
+      opacity: .75;
+      max-width: 600px;
+      margin: 0 auto 16px;
+      line-height: 1.7;
+    }
+    .stats-hero__disclaimer {
+      font-size: .82rem;
+      opacity: .5;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Sections */
+    .stats-section {
+      padding: 72px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .stats-section--bg {
+      background: #f9f7f3;
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .stats-section--bg > * {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 24px;
+    }
+    .stats-section--dark {
+      background: var(--c-dark, #0d0d0d);
+      color: #fff;
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .stats-section--dark > * {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 24px;
+    }
+
+    .stats-section__header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+    .stats-section--dark .stats-section__header {
+      border-bottom-color: rgba(255,255,255,.1);
+    }
+    .stats-section__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--c-or, #c9a84c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 22px;
+    }
+    .stats-section__title { font-size: clamp(1.35rem, 2.5vw, 1.75rem); margin-bottom: 4px; }
+    .stats-section__subtitle { font-size: .9rem; opacity: .6; }
+
+    /* KPI grid */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .kpi {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      position: relative;
+    }
+    .stats-section--dark .kpi {
+      background: rgba(255,255,255,.06);
+      box-shadow: none;
+    }
+    .kpi__num {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--c-or, #c9a84c);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .kpi__label {
+      font-size: .88rem;
+      line-height: 1.4;
+      opacity: .8;
+    }
+    .kpi__source {
+      font-size: .72rem;
+      opacity: .45;
+      margin-top: 8px;
+    }
+    .kpi__source a { color: inherit; }
+
+    /* Table */
+    .stats-table-wrap { overflow-x: auto; margin: 0 -4px; }
+    .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+    }
+    .stats-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: #f0ede8;
+      font-size: .78rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #555;
+    }
+    .stats-table--dark th { background: rgba(255,255,255,.08); color: rgba(255,255,255,.6); }
+    .stats-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid #f0ede8;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+    .stats-table--dark td { border-bottom-color: rgba(255,255,255,.08); }
+    .stats-table tr:last-child td { border-bottom: none; }
+    .stats-table__num { font-weight: 700; color: var(--c-or, #c9a84c); white-space: nowrap; }
+    .stats-table__src a {
+      color: inherit;
+      opacity: .55;
+      font-size: .8rem;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* Note */
+    .stats-note {
+      background: rgba(201,168,76,.08);
+      border-left: 3px solid var(--c-or, #c9a84c);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      font-size: .88rem;
+      line-height: 1.6;
+      margin: 24px 0;
+    }
+    .stats-note--dark { background: rgba(201,168,76,.06); }
+
+    /* CTA */
+    .stats-cta {
+      text-align: center;
+      padding: 80px 24px;
+      background: var(--c-dark, #0d0d0d);
+      color: #fff;
+    }
+    .stats-cta h2 { font-size: clamp(1.5rem,3vw,2rem); margin-bottom: 16px; }
+    .stats-cta p { opacity: .7; margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .stats-cta a {
+      display: inline-block;
+      background: var(--c-or, #c9a84c); color: #0d0d0d;
+      padding: 14px 32px; border-radius: 40px;
+      font-weight: 700; text-decoration: none;
+      transition: background .2s;
+    }
+    .stats-cta a:hover { background: #b8973e; }
+
+    @media (max-width: 600px) {
+      .stats-hero { padding: 100px 20px 60px; }
+      .kpi-grid { grid-template-columns: 1fr 1fr; }
+      .stats-section { padding: 56px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="main-nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="FMR Bar Event — Accueil">
+        <img src="logo.svg" onerror="this.style.display='none'" alt="FMR" class="nav__logo-img" width="42" height="42">
+        <span class="nav__brand-text"><strong>FMR BAR EVENT</strong><small>BAR MOBILE · PROVENCE</small></span>
+      </a>
+      <button class="nav__burger" id="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-modal="true" aria-label="Menu mobile">
+      <ul class="nav__mobile-list">
+        <li><a href="nos-prestations.html">Nos prestations</a></li>
+        <li><a href="nos-cartes.html">Nos cartes</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="a-propos.html">Notre histoire</a></li>
+        <li><a href="reservations.html" class="btn btn--gold nav__mobile-cta">Devis gratuit</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="stats-hero">
+    <span class="stats-hero__eyebrow">Données sourcées — mis à jour octobre 2026</span>
+    <h1>Chiffres clés du marché événementiel<br>et du mariage en France</h1>
+    <p class="stats-hero__lead">Mariages, budgets, spiritueux, traiteurs, événements d'entreprise : toutes les données chiffrées pour comprendre le secteur, issues de sources officielles (INSEE, UNIMEV, FranceAgriMer).</p>
+    <p class="stats-hero__disclaimer">Toutes les statistiques ci-dessous sont sourcées et vérifiables. Les liens vers les sources primaires sont fournis pour chaque donnée.</p>
+  </header>
+
+  <!-- 1. MARIAGES EN FRANCE -->
+  <section class="stats-section">
+    <div class="stats-section__header">
+      <div class="stats-section__icon" aria-hidden="true">💍</div>
+      <div>
+        <h2 class="stats-section__title">Mariages en France</h2>
+        <p class="stats-section__subtitle">Source : INSEE, État civil — séries longues</p>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi__num">248 174</div>
+        <div class="kpi__label">Mariages célébrés en France en 2024</div>
+        <div class="kpi__source"><a href="https://www.insee.fr/fr/statistiques/2381498" target="_blank" rel="noopener">INSEE, séries longues état civil, 2024</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">241 080</div>
+        <div class="kpi__label">Mariages célébrés en France en 2023</div>
+        <div class="kpi__source"><a href="https://www.insee.fr/fr/statistiques/2381498" target="_blank" rel="noopener">INSEE, séries longues état civil, 2023</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">+7 %</div>
+        <div class="kpi__label">Rebond du nombre de mariages depuis 2019 (après le plancher de 2020)</div>
+        <div class="kpi__source"><a href="https://www.insee.fr/fr/statistiques/8571148" target="_blank" rel="noopener">INSEE Bilan démographique 2023</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">3 %</div>
+        <div class="kpi__label">Part des mariages entre personnes de même sexe</div>
+        <div class="kpi__source"><a href="https://www.insee.fr/fr/statistiques/8902576" target="_blank" rel="noopener">INSEE, 2024</a></div>
+      </div>
+    </div>
+
+    <div class="stats-note">
+      <strong>En Provence-Alpes-Côte d'Azur</strong>, la région représente l'une des destinations de mariage les plus prisées en France, avec un fort afflux de mariages de destination grâce à ses domaines viticoles, mas et bastides.
+    </div>
+  </section>
+
+  <!-- 2. BUDGET MARIAGE -->
+  <div class="stats-section--bg" style="padding: 72px 0;">
+  <section class="stats-section" style="padding-top:0;padding-bottom:0;">
+    <div class="stats-section__header">
+      <div class="stats-section__icon" aria-hidden="true">💶</div>
+      <div>
+        <h2 class="stats-section__title">Budget mariage</h2>
+        <p class="stats-section__subtitle">Sources : Sofinscope / Crédit Agricole, Cofidis / CSA Research, Mariages.net</p>
+      </div>
+    </div>
+
+    <div class="stats-table-wrap">
+      <table class="stats-table" aria-label="Budget moyen d'un mariage en France selon les sources">
+        <thead>
+          <tr>
+            <th>Mesure</th>
+            <th>Chiffre</th>
+            <th>Source</th>
+            <th>Année</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Budget moyen déclaré (intentions, avant le mariage)</td>
+            <td class="stats-table__num">7 576 €</td>
+            <td class="stats-table__src"><a href="https://presse.credit-agricole.com/assets/2024-03-05-sofinscope-mariage-vdef-pdf-9b09-9ed05.html?dl=1" target="_blank" rel="noopener">Sofinscope / Crédit Agricole</a></td>
+            <td>2024</td>
+          </tr>
+          <tr>
+            <td>Budget moyen déclaré (intentions, n = 1 012 Français 18+)</td>
+            <td class="stats-table__num">9 873 €</td>
+            <td class="stats-table__src"><a href="https://www.cofidis-group.com/wp-content/uploads/2023/02/CP-Cofidis-Mariage-2023-VDEF.pdf" target="_blank" rel="noopener">Cofidis / CSA Research</a></td>
+            <td>2023</td>
+          </tr>
+          <tr>
+            <td>Budget moyen réel constaté (~90 invités, dépenses effectives)</td>
+            <td class="stats-table__num">~19 293 €</td>
+            <td class="stats-table__src"><a href="https://www.mariages.net/articles/budget-mariage-100-personnes--c11469" target="_blank" rel="noopener">Mariages.net</a></td>
+            <td>2026</td>
+          </tr>
+          <tr>
+            <td>Coût moyen par invité (dépenses réelles)</td>
+            <td class="stats-table__num">178 €</td>
+            <td class="stats-table__src"><a href="https://www.economiematin.fr/cout-mariage-francais-economiser" target="_blank" rel="noopener">Mariages.net / Économie Matin</a></td>
+            <td>2023</td>
+          </tr>
+          <tr>
+            <td>Coût traiteur moyen par personne (30-50 % du budget total)</td>
+            <td class="stats-table__num">110 €</td>
+            <td class="stats-table__src"><a href="https://www.mariages.net/articles/budget-mariage-50-personnes--c11533" target="_blank" rel="noopener">Mariages.net</a></td>
+            <td>2024</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="stats-note">
+      <strong>Note méthodologique :</strong> les sondages Sofinscope et Cofidis mesurent des <em>intentions déclarées avant le mariage</em>, d'où l'écart important avec les dépenses réelles constatées par Mariages.net. Les deux types de données sont valides mais ne mesurent pas la même chose.
+    </div>
+
+    <div class="kpi-grid" style="margin-top: 32px;">
+      <div class="kpi">
+        <div class="kpi__num">3,5–3,8 Mds €</div>
+        <div class="kpi__label">Taille estimée du marché du mariage en France, +35 % en 5 ans</div>
+        <div class="kpi__source"><a href="https://www.abcsalles.com/mag/actualite/toujours-explosion-nombre-mariages-budget" target="_blank" rel="noopener">Les Échos / ABC Salles, 2024</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">74 %</div>
+        <div class="kpi__label">Des futurs mariés organisent un enterrement de vie de célibataire</div>
+        <div class="kpi__source"><a href="https://www.tendancehotellerie.fr/articles-breves/communique-de-presse/20082-article/les-3-nouvelles-tendances-des-evjf-et-evg-weekendesk-vous-les-devoile" target="_blank" rel="noopener">Mariages.net / Weekendesk, 2023</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">~400 €</div>
+        <div class="kpi__label">Budget moyen par participant à un EVJF en France</div>
+        <div class="kpi__source"><a href="https://www.abcsalles.com/mag/actualite/enterrements-vie-jeune-fille-enterrements-vie-garcon-tendances-2023" target="_blank" rel="noopener">Madame Figaro / ABC Salles</a></div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <!-- 3. ÉVÉNEMENTIEL PROFESSIONNEL -->
+  <section class="stats-section--dark" style="padding: 72px 0;">
+  <div style="padding: 0 24px; max-width: 1100px; margin: 0 auto;">
+    <div class="stats-section__header">
+      <div class="stats-section__icon" aria-hidden="true">🏛️</div>
+      <div>
+        <h2 class="stats-section__title" style="color:#fff;">Filière événementielle professionnelle</h2>
+        <p class="stats-section__subtitle">Source : UNIMEV (Union Française des Métiers de l'Événement), Contrat de filière 2025</p>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi__num">10 Mds €</div>
+        <div class="kpi__label" style="color:rgba(255,255,255,.8);">CA annuel de la filière événementielle professionnelle</div>
+        <div class="kpi__source"><a href="https://www.unimev.fr/wp-content/uploads/2025/07/CP-contrat-de-filiere-sans-lien.pdf" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);">UNIMEV, Contrat de filière 2025</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">34 Mds €</div>
+        <div class="kpi__label" style="color:rgba(255,255,255,.8);">Flux d'affaires annuels générés par la filière</div>
+        <div class="kpi__source"><a href="https://www.unimev.fr/wp-content/uploads/2025/07/CP-contrat-de-filiere-sans-lien.pdf" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);">UNIMEV, Contrat de filière 2025</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">380 000</div>
+        <div class="kpi__label" style="color:rgba(255,255,255,.8);">Événements d'entreprise organisés par an en France</div>
+        <div class="kpi__source"><a href="https://www.unimev.fr/wp-content/uploads/2025/07/CP-contrat-de-filiere-sans-lien.pdf" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);">UNIMEV, Contrat de filière 2025</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">5,5 Mds €</div>
+        <div class="kpi__label" style="color:rgba(255,255,255,.8);">Investissements des entreprises françaises en événementiel en 2024</div>
+        <div class="kpi__source"><a href="https://www.unimev.fr/wp-content/uploads/2025/07/EVENTDATABOOK_2025_VERSION_WEB_FINALE.pdf" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);">UNIMEV, Event Data Book 2025</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">77 millions</div>
+        <div class="kpi__label" style="color:rgba(255,255,255,.8);">Participants annuels (salons, congrès, événements corporate)</div>
+        <div class="kpi__source"><a href="https://www.unimev.fr/wp-content/uploads/2025/07/CP-contrat-de-filiere-sans-lien.pdf" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);">UNIMEV, Contrat de filière 2025</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">20 Mds €</div>
+        <div class="kpi__label" style="color:rgba(255,255,255,.8);">Retombées touristiques générées par la filière événementielle</div>
+        <div class="kpi__source"><a href="https://www.unimev.fr/wp-content/uploads/2025/07/CP-contrat-de-filiere-sans-lien.pdf" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);">UNIMEV, Contrat de filière 2025</a></div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- 4. TRAITEURS -->
+  <section class="stats-section">
+    <div class="stats-section__header">
+      <div class="stats-section__icon" aria-hidden="true">🍽️</div>
+      <div>
+        <h2 class="stats-section__title">Secteur des traiteurs en France</h2>
+        <p class="stats-section__subtitle">Source : INSEE (code NAF 56.21Z), Propulse by Crédit Agricole</p>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi__num">+3 Mds €</div>
+        <div class="kpi__label">CA du secteur traiteurs, +51 % depuis 2016</div>
+        <div class="kpi__source"><a href="https://propulsebyca.fr/idees-business/traiteur/marche-traiteur" target="_blank" rel="noopener">Propulse by CA / INSEE, 2023</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">17 492</div>
+        <div class="kpi__label">Entreprises de traiteurs actives en France</div>
+        <div class="kpi__source"><a href="https://propulsebyca.fr/idees-business/traiteur/marche-traiteur" target="_blank" rel="noopener">Propulse by CA / INSEE Sirene, 2022-2024</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">5 093</div>
+        <div class="kpi__label">Nouvelles entreprises de traiteurs créées en 2023</div>
+        <div class="kpi__source"><a href="https://propulsebyca.fr/idees-business/traiteur/marche-traiteur" target="_blank" rel="noopener">Propulse by CA / INSEE, 2023</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">600 €</div>
+        <div class="kpi__label">Panier moyen par service traiteur</div>
+        <div class="kpi__source"><a href="https://propulsebyca.fr/idees-business/traiteur/marche-traiteur" target="_blank" rel="noopener">Propulse by CA, 2024</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SPIRITUEUX -->
+  <div class="stats-section--bg" style="padding: 72px 0;">
+  <section class="stats-section" style="padding-top:0;padding-bottom:0;">
+    <div class="stats-section__header">
+      <div class="stats-section__icon" aria-hidden="true">🍸</div>
+      <div>
+        <h2 class="stats-section__title">Marché des spiritueux en France</h2>
+        <p class="stats-section__subtitle">Source : FranceAgriMer / Fédération Française des Spiritueux (FFS), Fiche filière 2025</p>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi__num">251 M litres</div>
+        <div class="kpi__label">Ventes de spiritueux en grande distribution (GMS) en 2023</div>
+        <div class="kpi__source"><a href="https://www.franceagrimer.fr/content/download/76479/document/20250205_FICHE%20FILIERE%20SPIRITUEUX%202025.pdf" target="_blank" rel="noopener">FranceAgriMer / FFS, 2025</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">5 Mds €</div>
+        <div class="kpi__label">Valeur des ventes de spiritueux en grande distribution en 2023</div>
+        <div class="kpi__source"><a href="https://www.franceagrimer.fr/content/download/76479/document/20250205_FICHE%20FILIERE%20SPIRITUEUX%202025.pdf" target="_blank" rel="noopener">FranceAgriMer / FFS, 2025</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">21 M litres</div>
+        <div class="kpi__label">Ventes de spiritueux dans les bars, cafés et restaurants (CHR) en 2023</div>
+        <div class="kpi__source"><a href="https://www.franceagrimer.fr/content/download/76479/document/20250205_FICHE%20FILIERE%20SPIRITUEUX%202025.pdf" target="_blank" rel="noopener">FranceAgriMer / FFS, 2025</a></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__num">11 %</div>
+        <div class="kpi__label">Part des consommateurs réguliers de vin en France, −5 pts depuis 2015</div>
+        <div class="kpi__source"><a href="https://www.reussir.fr/vigne%2F/sia-2023-les-consommateurs-reguliers-de-vin-ne-sont-plus-que-11-en-france" target="_blank" rel="noopener">FranceAgriMer / CNIV, 2022</a></div>
+      </div>
+    </div>
+
+    <div class="stats-note">
+      <strong>Tendance :</strong> troisième année consécutive de baisse des ventes de spiritueux en GMS (−4,3 % en volume en 2023), ce qui renforce l'importance du circuit événementiel et des bars mobiles pour valoriser les spiritueux premium auprès des consommateurs.
+    </div>
+  </section>
+  </div>
+
+  <!-- 6. DÉBITS DE BOISSONS -->
+  <section class="stats-section">
+    <div class="stats-section__header">
+      <div class="stats-section__icon" aria-hidden="true">🍺</div>
+      <div>
+        <h2 class="stats-section__title">Débits de boissons en France</h2>
+        <p class="stats-section__subtitle">Source : INSEE Première n° 2123, 2023</p>
+      </div>
+    </div>
+
+    <div class="stats-table-wrap">
+      <table class="stats-table" aria-label="Statistiques débits de boissons INSEE">
+        <thead>
+          <tr>
+            <th>Indicateur</th>
+            <th>Valeur</th>
+            <th>Évolution</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Établissements actifs (débits de boissons, hors micro-entrepreneurs)</td>
+            <td class="stats-table__num">36 200</td>
+            <td>—</td>
+            <td class="stats-table__src"><a href="https://www.insee.fr/fr/statistiques/9032715" target="_blank" rel="noopener">INSEE Première n°2123, 2023</a></td>
+          </tr>
+          <tr>
+            <td>CA médian par établissement</td>
+            <td class="stats-table__num">164 750 €</td>
+            <td>—</td>
+            <td class="stats-table__src"><a href="https://www.insee.fr/fr/statistiques/9032715" target="_blank" rel="noopener">INSEE Première n°2123, 2023</a></td>
+          </tr>
+          <tr>
+            <td>Emplois salariés (ETP)</td>
+            <td class="stats-table__num">69 000 ETP</td>
+            <td>+66 % depuis 2016</td>
+            <td class="stats-table__src"><a href="https://www.insee.fr/fr/statistiques/9032715" target="_blank" rel="noopener">INSEE Première n°2123, 2023</a></td>
+          </tr>
+          <tr>
+            <td>Chiffre d'affaires du secteur</td>
+            <td class="stats-table__num">+87 % en valeur</td>
+            <td>2016 → 2023</td>
+            <td class="stats-table__src"><a href="https://www.insee.fr/fr/statistiques/9032715" target="_blank" rel="noopener">INSEE Première n°2123, 2023</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <div class="stats-section--bg" style="padding: 56px 0;">
+  <section class="stats-section" style="padding-top:0;padding-bottom:0;">
+    <h2 style="font-size:1.2rem;margin-bottom:20px;">Sources primaires</h2>
+    <ol style="font-size:.88rem;line-height:2;padding-left:20px;color:#555;">
+      <li><a href="https://www.insee.fr/fr/statistiques/2381498" target="_blank" rel="noopener">INSEE — Mariages : séries longues depuis 1950</a></li>
+      <li><a href="https://www.insee.fr/fr/statistiques/9032715" target="_blank" rel="noopener">INSEE Première n° 2123 — Les débits de boissons en 2023</a></li>
+      <li><a href="https://www.unimev.fr/wp-content/uploads/2025/07/CP-contrat-de-filiere-sans-lien.pdf" target="_blank" rel="noopener">UNIMEV — Communiqué Contrat de filière événementielle 2025</a></li>
+      <li><a href="https://www.unimev.fr/wp-content/uploads/2025/07/EVENTDATABOOK_2025_VERSION_WEB_FINALE.pdf" target="_blank" rel="noopener">UNIMEV — Event Data Book 2025</a></li>
+      <li><a href="https://www.franceagrimer.fr/content/download/76479/document/20250205_FICHE%20FILIERE%20SPIRITUEUX%202025.pdf" target="_blank" rel="noopener">FranceAgriMer / FFS — Fiche filière spiritueux 2025</a></li>
+      <li><a href="https://presse.credit-agricole.com/assets/2024-03-05-sofinscope-mariage-vdef-pdf-9b09-9ed05.html?dl=1" target="_blank" rel="noopener">Sofinscope / Crédit Agricole Consumer Finance — Baromètre mariage 2024</a></li>
+      <li><a href="https://www.cofidis-group.com/wp-content/uploads/2023/02/CP-Cofidis-Mariage-2023-VDEF.pdf" target="_blank" rel="noopener">Cofidis / CSA Research — Budget mariage 2023 (n=1 012)</a></li>
+      <li><a href="https://propulsebyca.fr/idees-business/traiteur/marche-traiteur" target="_blank" rel="noopener">Propulse by Crédit Agricole — Marché du traiteur en France</a></li>
+    </ol>
+  </section>
+  </div>
+
+  <!-- CTA -->
+  <section class="stats-cta">
+    <h2>Votre événement en Provence mérite le meilleur bar</h2>
+    <p>Loïc & Pierre vous proposent un devis sur-mesure sous 48 heures pour votre mariage, EVJF ou soirée d'entreprise.</p>
+    <a href="reservations.html">Demander un devis gratuit</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand-col">
+          <a href="index.html" class="footer__brand-link" aria-label="FMR Bar Event — Accueil">
+            <span class="footer__logo-text">FMR BAR EVENT</span>
+          </a>
+          <p class="footer__tagline">Bar mobile cocktail<br>Provence · Luberon · Hérault</p>
+        </div>
+        <div class="footer__links-col">
+          <p class="footer__col-title">Prestations</p>
+          <ul class="footer__list">
+            <li><a href="mariage.html">Bar Mariage Provence</a></li>
+            <li><a href="evjf.html">Bar EVJF</a></li>
+            <li><a href="entreprise.html">Événement Entreprise</a></li>
+            <li><a href="nos-prestations.html">Toutes les prestations</a></li>
+          </ul>
+        </div>
+        <div class="footer__links-col">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__list">
+            <li><a href="nos-cartes.html">Nos Cartes</a></li>
+            <li><a href="a-propos.html">Notre Histoire</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="reservations.html">Devis gratuit</a></li>
+          </ul>
+        </div>
+        <div class="footer__links-col">
+          <p class="footer__col-title">Contact</p>
+          <div class="footer__contact-row"><span class="footer__contact-ico">·</span><a href="tel:+33676972108">06 76 97 21 08</a></div>
+          <div class="footer__contact-row"><span class="footer__contact-ico">·</span><a href="mailto:fmr.event84@gmail.com">fmr.event84@gmail.com</a></div>
+          <div class="footer__contact-row"><span class="footer__contact-ico">·</span>Provence · Luberon · Hérault</div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 FMR Bar Event. Réalisé par <a href="https://tricolab.fr" target="_blank" rel="noopener">Tricolab</a>.</p>
+        <a href="mentions-legales.html" class="footer__legal">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Gestion des cookies">
+    <div class="cookie-banner__inner">
+      <span class="cookie-banner__label">Confidentialité</span>
+      <p class="cookie-banner__text">Nous utilisons des cookies pour améliorer votre expérience de navigation sur ce site.</p>
+      <div class="cookie-banner__actions">
+        <button id="cookie-refuse" class="cookie-btn cookie-btn--ghost">Refuser</button>
+        <button id="cookie-accept" class="cookie-btn cookie-btn--gold">Accepter</button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="mob-bar" aria-label="Actions rapides">
+    <a href="tel:+33676972108" class="mob-bar__btn mob-bar__btn--call" aria-label="Appeler">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      Appeler
+    </a>
+    <a href="https://wa.me/33676972108?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20mon%20%C3%A9v%C3%A9nement." class="mob-bar__btn mob-bar__btn--wa" aria-label="WhatsApp" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a href="reservations.html" class="mob-bar__btn mob-bar__btn--devis" aria-label="Devis gratuit">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Devis gratuit
+    </a>
+  </nav>
+
+  <script src="script.js?v=5"></script>
+</body>
+</html>

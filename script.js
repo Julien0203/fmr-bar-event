@@ -347,30 +347,46 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   track.appendChild(inner.cloneNode(true));
 })();
 
-/* ---- Formulaire réservation ---- */
+/* ---- Formulaire réservation → WhatsApp ---- */
 (function () {
-  const form = document.querySelector('.js-resa-form');
+  var WA_PHONE = '33676972108';
+  var form = document.querySelector('.js-resa-form');
   if (!form) return;
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    const btn = form.querySelector('[type="submit"]');
-    const orig = btn.textContent;
 
-    btn.disabled = true;
-    btn.textContent = 'Envoi en cours…';
+    var get = function (name) {
+      var el = form.querySelector('[name="' + name + '"]');
+      return el ? el.value.trim() : '';
+    };
 
-    // Simulate — replace with actual fetch()
-    setTimeout(() => {
-      const success = form.querySelector('.form-success');
-      if (success) {
-        form.style.opacity = '0';
-        setTimeout(() => {
-          form.style.display = 'none';
-          success.style.display = 'flex';
-        }, 300);
-      }
-    }, 1200);
+    var prenom    = get('prenom');
+    var nom       = get('nom');
+    var email     = get('email');
+    var tel       = get('tel');
+    var typeEvt   = get('type-event');
+    var date      = get('date-event');
+    var invites   = get('nb-invites');
+    var lieu      = get('lieu');
+    var duree     = get('duree');
+    var message   = get('message');
+
+    var lines = [];
+    lines.push('Bonjour, je souhaite un devis pour mon événement.');
+    lines.push('');
+    lines.push('👤 ' + prenom + ' ' + nom);
+    if (email)   lines.push('📧 ' + email);
+    if (tel)     lines.push('📱 ' + tel);
+    lines.push('🎉 Type : ' + typeEvt);
+    if (date)    lines.push('📅 Date : ' + date);
+    if (invites) lines.push('👥 Invités : ' + invites);
+    if (lieu)    lines.push('📍 Lieu : ' + lieu);
+    if (duree)   lines.push('⏱ Durée : ' + duree);
+    if (message) { lines.push(''); lines.push('💬 ' + message); }
+
+    var text = encodeURIComponent(lines.join('\n'));
+    window.open('https://wa.me/' + WA_PHONE + '?text=' + text, '_blank');
   });
 })();
 
