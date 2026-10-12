@@ -1,4 +1,55 @@
+# robots.txt — FMR Bar Event
+# https://www.fmr-bar-event.fr
+
+# ── Crawlers généraux ─────────────────────────────────────────
 User-agent: *
 Allow: /
+Allow: /*.css
+Allow: /*.js
+Allow: /images/
+Allow: /videos/
+Disallow: /_sources/
 
+# ── Google ────────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+Allow: /*.css
+Allow: /*.js
+
+User-agent: Google-Extended
+Allow: /
+
+# ── Bing ──────────────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+
+# ── Crawlers IA ───────────────────────────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ── Sitemap ───────────────────────────────────────────────────
 Sitemap: https://www.fmr-bar-event.fr/sitemap.xml
